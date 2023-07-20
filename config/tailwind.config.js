@@ -13,8 +13,13 @@ module.exports = {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
         colors: {
-          'custom-dark-purple': '#480b68',
+          'dark-green': '#067e5b',
+          'light-green': '#acc174',
+          'light-brown': '#7b5f37',
         },
+        backgroundImage: {
+          'cover-image': "url('cover_image.jpeg')"
+      }
     },
   },
   plugins: [
