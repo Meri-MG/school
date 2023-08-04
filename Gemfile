@@ -75,5 +75,3 @@ group :test do
 end
 
 gem "tailwindcss-rails", "~> 2.0"
-gem "shrine", "~> 3.0"
-gem 'responders', '~> 3.0'
