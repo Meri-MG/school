@@ -1,0 +1,25 @@
+
+<div class="flex flex-col items-center justify-center">
+  <h1 class="mb-4 text-4xl font-semibold text-dark-green">Meet <%= @sponsor_student.name.capitalize %></h1>
+  <% if @sponsor_student.secondary_image.attached? %>
+    <%= image_tag @sponsor_student.secondary_image.variant(resize_to_limit: [600, 600]).processed, class: 'block rounded-lg'  %>
+  <% elsif @sponsor_student.main_image.attached? %>
+    <%= image_tag @sponsor_student.main_image.variant(resize_to_limit: [600, 600]).processed, class: 'block rounded-lg'  %>
+  <% end %>
+  <div class="w-3/4 text-center text-lg font-normal text-light-brown lg:text-xl mx-auto mt-6">
+    <%= @sponsor_student.description %>
+  </div>
+   <div class="px-6 pt-4 pb-2">
+    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-600 mr-2 mb-2">Donate ID: <%= @sponsor_student.unique_identifier %></span>
+    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-600 mr-2 mb-2">Age: <%= @sponsor_student.age %></span>
+    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-600 mr-2 mb-2">Grade: <%= @sponsor_student.grade %></span>
+  </div>
+  <div class="px-6 pt-4 pb-2">
+    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-600 mr-2 mb-2">Favorite color: <%= @sponsor_student.fav_color %></span>
+    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-600 mr-2 mb-2">Favorite food: <%= @sponsor_student.fav_food %></span>
+    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-600 mr-2 mb-2">Hobbies: <%= @sponsor_student.hobbies %></span>
+  </div>
+  <p class='font-semibold mt-2'>
+    Sponsored Status: <span class="italic font-semibold"><%= @sponsor_student.sponsored_status&.humanize %></span>
+  </p>
+</div>
