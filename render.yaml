@@ -2,6 +2,7 @@ databases:
   - name: school
     databaseName: school_development
     user: school
+    plan: free
 
 services:
   - type: web
