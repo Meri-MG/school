@@ -2,8 +2,8 @@
 
   <%= render "shared/error_messages", resource: @sponsor_student %>
   <!-- Your other f fields here -->
-  <%= f.file_field :main_image %>
-  <%= f.file_field :secondary_image %>
+  <%= f.file_field :main_image, direct_upload: true %>
+  <%= f.file_field :secondary_image, direct_upload: true %>
   <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name %>
