@@ -1,0 +1,21 @@
+databases:
+  - name: school
+    databaseName: school_development
+    user: school
+    plan: free
+
+services:
+  - type: web
+    name: school
+    runtime: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    plan: free
+    envVars:
+      - key: postgres://alc_project_user:b25HR3fsT97oEdBOGgJwlR3F1TmaPkDX@dpg-cj9k54qvvtos73eum2j0-a/alc_project
+        fromDatabase:
+          name: school
+          property: connectionString
+      - key: ee64b2cd54996b0f8ef2b22550d6677c
+        sync: false
+    
