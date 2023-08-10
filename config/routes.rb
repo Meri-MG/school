@@ -4,5 +4,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "home#index"
-  resources :about, only: %i[edit update show]
+
+  resources :sponsor_students, only: %i[index new create show edit update destroy]
 end
