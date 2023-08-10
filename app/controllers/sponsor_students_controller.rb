@@ -11,6 +11,10 @@ class SponsorStudentsController < ApplicationController
     @sponsor_student = SponsorStudent.find(params[:id])
   end
 
+  def edit
+    @sponsor_student = SponsorStudent.find(params[:id])
+  end
+
   def create
     @sponsor_student = SponsorStudent.create(sponsors_student_params)
 
@@ -20,6 +24,21 @@ class SponsorStudentsController < ApplicationController
       flash.now[:error] = 'Could not save client'
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def update
+    @sponsor_student = SponsorStudent.find(params[:id])
+
+    @sponsor_student.update(sponsors_student_params)
+
+    redirect_to sponsor_student_path(@sponsor_student)
+  end
+
+  def destroy
+    @sponsor_student = SponsorStudent.find(params[:id])
+    @sponsor_student.destroy!
+
+    redirect_to sponsor_students_path
   end
 
   private

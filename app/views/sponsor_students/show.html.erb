@@ -2,9 +2,9 @@
 <div class="flex flex-col items-center justify-center">
   <h1 class="mb-4 text-4xl font-semibold text-dark-green">Meet <%= @sponsor_student.name.capitalize %></h1>
   <% if @sponsor_student.secondary_image.attached? %>
-    <%= image_tag @sponsor_student.secondary_image.variant(resize_to_limit: [600, 600]).processed, class: 'block rounded-lg'  %>
+    <%= cl_image_tag(@sponsor_student.secondary_image.key, width: 600, crop: :scale, type: :upload, class: 'rounded-lg') %>
   <% elsif @sponsor_student.main_image.attached? %>
-    <%= image_tag @sponsor_student.main_image.variant(resize_to_limit: [600, 600]).processed, class: 'block rounded-lg'  %>
+    <%= cl_image_tag(@sponsor_student.main_image.key, width: 600, crop: :scale, type: :upload, class: 'rounded-lg') %>
   <% end %>
   <div class="w-3/4 text-center text-lg font-normal text-light-brown lg:text-xl mx-auto mt-6">
     <%= @sponsor_student.description %>
@@ -22,4 +22,7 @@
   <p class='font-semibold mt-2'>
     Sponsored Status: <span class="italic font-semibold"><%= @sponsor_student.sponsored_status&.humanize %></span>
   </p>
+<%= button_to 'Delete', sponsor_student_path(@sponsor_student), method: :delete %>
+<%= link_to 'Edit', edit_sponsor_student_path(@sponsor_student) %>
 </div>
+

@@ -5,6 +5,7 @@ development:
   environment_variable: CLOUDINARY_URL=cloudinary://888238513138866:ml-v1qU7F6936BW4WaiAXQjNNbo@ddsaap4pm
   secure: true
   static_file_support: false
+  enhance_image_tag: true
 
 production:
   cloud_name: "ddsaap4pm"
@@ -14,3 +15,4 @@ production:
   secure: true
   cdn_subdomain: true
   static_file_support: true
+  enhance_image_tag: true

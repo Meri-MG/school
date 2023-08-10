@@ -4,7 +4,7 @@
       <% @sponsor_students.each do |student| %>
         <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
           <% if student.main_image.attached? %>
-            <%= cl_image_tag(student.main_image.key, width: 260, height: 260, crop: :scale, effect: "cartoonify") %>
+            <%= cl_image_tag(student.main_image.key, crop: :scale, type: :upload, class: 'w-full rounded-lg') %>
           <% end %>
           <div class="p-5 text-gray-600">
             <p class="text-dark-green text-2xl uppercase font-semibold my-2"><%= student.name %></p>
