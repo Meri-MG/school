@@ -22,7 +22,10 @@
   <p class='font-semibold mt-2'>
     Sponsored Status: <span class="italic font-semibold"><%= @sponsor_student.sponsored_status&.humanize %></span>
   </p>
-<%= button_to 'Delete', sponsor_student_path(@sponsor_student), method: :delete %>
-<%= link_to 'Edit', edit_sponsor_student_path(@sponsor_student) %>
+
+<% if Rails.env.development? %>
+  <%= button_to 'Delete', sponsor_student_path(@sponsor_student), method: :delete %>
+  <%= link_to 'Edit', edit_sponsor_student_path(@sponsor_student) %>
+<% end %>
 </div>
 
