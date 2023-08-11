@@ -5,12 +5,22 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag 'application', 'pagy-nav' %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class=bg-white>
+    <main class="container mx-auto px-4 flex flex-col">
+      <%= render 'shared/navbar' %>
+      <div class="px-5">
+        <%= yield %>
+      </div>
+    </main>
+    <footer>
+      <%= render 'shared/footer' %>
+    </footer>
   </body>
 </html>

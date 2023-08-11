@@ -1,0 +1,13 @@
+
+asmaa:
+  name: Asmaa
+  age: 12
+  grade: 8th grade
+  description: She is a middle child with 7 siblings all of which have made their way through ALC.
+  fav_food: spaghetti
+  fav_color: yellow
+  hobbies: [cooking]
+  sponsored_status: unsponsored
+
+# two: {}
+# column: value
