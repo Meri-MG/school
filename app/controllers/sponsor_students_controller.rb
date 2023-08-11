@@ -1,6 +1,6 @@
 class SponsorStudentsController < ApplicationController
   def index
-    @sponsor_students = SponsorStudent.all
+    @pagy, @sponsor_students = pagy(SponsorStudent.order(created_at: :asc))
   end
 
   def new
