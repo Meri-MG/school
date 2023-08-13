@@ -118,8 +118,6 @@ GEM
     loofah (2.21.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
-    macaddr (1.7.2)
-      systemu (~> 2.6.5)
     mail (2.8.1)
       mini_mime (>= 0.1.1)
       net-imap
@@ -214,7 +212,6 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (1.2.2)
       railties (>= 6.0.0)
-    systemu (2.6.5)
     tailwindcss-rails (2.0.30-x86_64-darwin)
       railties (>= 6.0.0)
     tailwindcss-rails (2.0.30-x86_64-linux)
@@ -230,8 +227,6 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.8.2)
-    uuid (2.3.9)
-      macaddr (~> 1.0)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -274,7 +269,6 @@ DEPENDENCIES
   tailwindcss-rails (~> 2.0)
   turbo-rails
   tzinfo-data
-  uuid
   web-console
   webdrivers
 

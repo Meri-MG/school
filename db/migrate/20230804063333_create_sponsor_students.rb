@@ -1,6 +1,6 @@
 class CreateSponsorStudents < ActiveRecord::Migration[7.0]
   def change
-    create_table :sponsor_students, id: :uuid do |t|
+    create_table :sponsor_students do |t|
       t.string :name, null: false
       t.string :description, null: false
       t.string :grade

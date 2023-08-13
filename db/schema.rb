@@ -42,7 +42,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_04_063333) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "sponsor_students", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+  create_table "sponsor_students", force: :cascade do |t|
     t.string "name", null: false
     t.string "description", null: false
     t.string "grade"

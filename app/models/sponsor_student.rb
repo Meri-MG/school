@@ -1,7 +1,7 @@
 class SponsorStudent < ApplicationRecord
-  has_one_attached :main_image
+  has_one_attached :main_image, dependent: :destroy
 
-  has_one_attached :secondary_image
+  has_one_attached :secondary_image, dependent: :destroy
 
   validates :name, :description, :age, presence: true
 
