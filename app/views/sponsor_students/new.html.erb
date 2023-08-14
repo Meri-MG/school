@@ -1,7 +1,6 @@
 <%= form_with(model: @sponsor_student, url: sponsor_students_path, local: true) do |f| %>
 
   <%= render "shared/error_messages", resource: @sponsor_student %>
-  <!-- Your other f fields here -->
   <%= f.file_field :main_image, direct_upload: true %>
   <%= f.file_field :secondary_image, direct_upload: true %>
   <div class="field">
@@ -11,7 +10,7 @@
 
   <div class="field">
     <%= f.label :description %>
-    <%= f.text_field :description %>
+    <%= f.text_area :description %>
   </div>
 
   <div class="field">
