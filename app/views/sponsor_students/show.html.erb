@@ -7,7 +7,7 @@
     <%= cl_image_tag(@sponsor_student.main_image.key, width: 600, crop: :scale, type: :upload, class: 'rounded-lg') %>
   <% end %>
   <div class="w-3/4 text-lg font-normal text-light-brown lg:text-xl mx-auto mt-6">
-    <%= sponsor_student.description %>
+    <%= simple_format(@sponsor_student.description) %>
   </div>
 
    <div class="px-6 pt-4 pb-2">

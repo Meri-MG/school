@@ -46,6 +46,6 @@ class SponsorStudentsController < ApplicationController
   def sponsors_student_params
     params.require(:sponsor_student)
           .permit(:name, :description, :age, :grade, :fav_food, :sponsored_status, 
-                  :fav_color, :main_image, :secondary_image, :hobbies, :content)
+                  :fav_color, :main_image, :secondary_image, :hobbies)
   end
 end
