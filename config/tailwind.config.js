@@ -17,9 +17,6 @@ module.exports = {
           'light-green': '#acc174',
           'light-brown': '#7b5f37',
         },
-        backgroundImage: {
-          'cover-image': "url('cover_image.jpeg')"
-      }
     },
   },
   plugins: [

@@ -9,7 +9,8 @@
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "application", "pagy-nav", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%= javascript_include_tag "application", "navbar", "data-turbo-track": "reload", defer: true %>
+
   </head>
 
   <body class=bg-white>
@@ -22,5 +23,19 @@
     <footer>
       <%= render 'shared/footer' %>
     </footer>
+  <script>
+      function setupNavbarToggle() {
+      const button = document.querySelector('[data-collapse-toggle="navbar-cta"]');
+      const content = document.getElementById('navbar-cta');
+
+      button.addEventListener('click', function() {
+        content.classList.toggle('hidden'); 
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      setupNavbarToggle();
+    });
+  </script>
   </body>
 </html>
