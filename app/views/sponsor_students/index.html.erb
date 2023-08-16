@@ -23,6 +23,6 @@
   <%== pagy_nav(@pagy) %>
 </div>
 
-<%# if Rails.env.development? %>
+<% if Rails.env.development? %>
   <%= link_to 'New student', new_sponsor_student_path %>
-<%# end %>
+<% end %>
