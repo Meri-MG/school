@@ -3,7 +3,7 @@ class SponsorStudent < ApplicationRecord
 
   has_one_attached :secondary_image, dependent: :destroy
 
-  validates :name, :description, :age, :unique_identifier, presence: true
+  validates :name, :description, :age, presence: true
 
   enum sponsored_status: { sponsored: 'sponsored', unsponsored: 'unsponsored' }
 

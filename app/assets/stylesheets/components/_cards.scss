@@ -1,3 +1,87 @@
-.card {
-  // card styles
+.card-grid {
+  display: grid;
+  max-width: 1200px;
+  margin: 0 auto 5rem auto;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-rows: auto;
+  grid-gap: 1.25rem;
+  border-radius: 0.5rem;
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 1.2);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.2);
+
+
+  .card_image {
+      overflow: hidden;
+
+        img {
+          max-width: 100%;
+          height: 100%;
+          display: block;
+          border-radius: 0.5rem;
+        }
+  }
+
+  .card_content {
+    padding: 1.25rem;
+    transition: all 0.5s ease;
+
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+      cursor: pointer;
+    }
+
+    .card_title {
+      font-size: 1.5rem;
+      margin-bottom: 0.625rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: $primary-color;
+    }
+
+    p {
+      font-size: 1.25rem;
+      margin-bottom: 0;
+      font-weight: 600;
+      color: $grey-color;
+    }
+
+    em {
+      font-weight: 500;
+    }
+
+    .unsponsored {
+      margin: 1.25rem 0;
+      font-weight: 800;
+    }
+
+    a {
+      font-weight: 800;
+      color: $brown-color;
+      font-size: 1.25rem;
+
+      &:hover {
+        text-decoration: none;
+        color: $primary-color;
+      }
+    }
+
+    .check_story {
+      margin: 1.25rem 0;
+    }
+
+    .sponsor_student {
+      color: $primary-color;
+
+      &:hover {
+        text-decoration: none;
+        color: $secondary-color;
+      }
+    }
+  }
+}
 }

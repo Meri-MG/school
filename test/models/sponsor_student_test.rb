@@ -6,7 +6,6 @@ class SponsorStudentTest < ActiveSupport::TestCase
     assert_includes sponsor.errors[:name], "can't be blank"
     assert_includes sponsor.errors[:description], "can't be blank"
     assert_includes sponsor.errors[:age], "can't be blank"
-    assert_includes sponsor.errors[:unique_identifier], "can't be blank"
   end
 
   test 'unique identifier' do
