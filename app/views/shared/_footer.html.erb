@@ -1,41 +1,40 @@
-<div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-  <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
-    <div class="flex flex-col justify-center items-center md:flex md:flex-row md:justify-between" id="contact-details">
-      <div class="mb-6 md:mb-0">
-        <%= link_to root_path, class: "block lg:inline-block lg:mt-0" do %>
-          <%= image_tag 'logo.jpg', class: 'w-60 h-52' %>
-        <% end %>        
-      </div>
-      <div class="text-center mt-6 md:text-left lg:text-left w-60">
-        <h2 class="mb-6 text-sm font-extrabold text-dark-green uppercase">Contact details</h2>
-        <ul class="text-light-brown font-medium md:text-left">
-          <li>
-            <p class="mb-2 hover:underline">Beirut, Lebanon</p>
-          </li>
-          <li>
-            <p class="mb-2 hover:underline">+961 1 250 745 </p>
-          </li>
-          <li>
-            <p class="mb-2 hover:underline">adventistlearningcenterbeirut@gmail.com</p>
-          </li>
-        </ul>
-      </div>
-      <div class="mt-6 md:ml-10">
-        <h2 class="mb-6 text-sm font-extrabold text-dark-green uppercase">Follow us</h2>
-        <ul class="text-light-brown font-medium">
-            <li class="mb-4">
-                <a href="https://www.instagram.com/adventistlearningcenter/" target="_blank" rel="noopener" class="hover:underline">Instagram</a>
-            </li>
-            <li>
-                <a href="https://www.facebook.com/adventistlearningcenter" target="_blank" rel="noopener" class="hover:underline">Facebook</a>
-            </li>
-        </ul>
-      </div>
+<div id="contact-details">
+  <hr />
+  <div class="contacts_wrapper">
+    <div class="logo-wrapper">
+      <%= link_to root_path, class: "" do %>
+        <%= image_tag 'logo.jpg', class: 'alc_logo', alt: 'alc-logo' %>
+      <% end %>
     </div>
-  <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
-    <div class="w-60 mx-auto text-center sm:flex sm:items-center sm:justify-center content-center">
-      <span class="text-sm text-gray-600 sm:text-center py-4">© 2023 <a href="https://www.facebook.com/adventistlearningcenter" class="hover:underline">Adventist Learning Center</a>. All Rights Reserved.
-      </span>
+    <div class="contact_details">
+      <h2 class="contacts_title">Contact details</h2>
+      <ul>
+        <li>
+          <p>Beirut, Lebanon</p>
+        </li>
+        <li>
+          <p>+961 1 250 745 </p>
+        </li>
+        <li>
+          <p>adventistlearningcenterbeirut@gmail.com</p>
+        </li>
+      </ul>
+    </div>
+    <div class="follow_social_links">
+      <h2 class="contacts_title">Follow us</h2>
+        <ul>
+          <li>
+              <a href="https://www.instagram.com/adventistlearningcenter/" target="_blank" rel="noopener">Instagram</a>
+          </li>
+          <li>
+              <a href="https://www.facebook.com/adventistlearningcenter" target="_blank" rel="noopener">Facebook</a>
+          </li>
+        </ul>
+    </div>
   </div>
+  <hr />
+  <div class="rights">
+    <span>© 2023 <a href="https://www.facebook.com/adventistlearningcenter" target="_blank" rel="noopener">Adventist Learning Center</a>. All Rights Reserved.
+    </span>
   </div>
 </div>

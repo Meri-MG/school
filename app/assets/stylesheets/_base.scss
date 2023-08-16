@@ -1,0 +1,45 @@
+html, body, h1, h2, h3, p, ul, ol {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background-color: white;
+  max-width: 85%;
+  margin: 1rem auto;
+  font-family: Arial, sans-serif;
+  font-size: $base-font-size;
+  line-height: 1.5;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  font-weight: $base-font-weight;
+  &:hover {
+    color: $secondary-color;
+    text-decoration: underline;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+.about_us {
+  color: $primary-color;
+  text-transform: uppercase;
+  font-weight: $base-font-weight;
+  font-size: 2rem;
+  padding: 3rem 0 1rem 0;
+  text-align: center;
+}
+
+.description {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  color: $brown-color;
+  width: 75%;
+  margin: 0 auto 1rem auto;
+}
