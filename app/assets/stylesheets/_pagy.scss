@@ -7,6 +7,7 @@
   background-color: #fff;
   position: relative;
   max-width: 50%;
+  min-width: 30%;
   margin: 0 auto;
 
   span {
@@ -23,15 +24,37 @@
       }
 
       &.active {
-        background-color: #067e5b;
+        background-color: $primary-color;
         color: white;
         border: none;
 
         &:hover {
-          background-color: #acc174;
+          background-color: $secondary-color;
           color: white;
           border: none;
       }
+    }
+  }
+}
+
+@include breakpoint(tablet){
+  .pagination {
+    max-width: 70%;
+    padding: 20px;
+
+    span {
+      padding: 6px 10px;
+    }
+  }
+}
+
+@include breakpoint(phone){
+  .pagination {
+    max-width: 90%;
+    padding: 16px;
+
+    span {
+      padding: 4px 8px;
     }
   }
 }

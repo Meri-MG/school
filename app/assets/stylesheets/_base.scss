@@ -21,7 +21,6 @@ a {
 
   &:hover {
     color: $secondary-color;
-    text-decoration: underline;
   }
 }
 
@@ -76,20 +75,11 @@ ul {
   .click_donate {
     margin: 2rem 0 2rem 0;
   }
-  
-  .donate-link {
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-    
-    &:hover {
-      text-decoration: underline;
-    }
-  }
 }
 
 @include breakpoint(tphone){
   .donate_instructions {
+    max-width: 80%;
     padding: 2rem;
     text-align: left;
     
