@@ -8,53 +8,6 @@
   height: 200px;
 }
 
-footer {
-  hr {
-    border: none;
-    height: 1px;
-    background-color: $grey-color;
-  }
-
-  .contacts_wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
-    align-content: center;
-    width: 100%;
-
-    .contact_details, .follow_social_links {
-      width: 250px;
-    }
-
-    .contacts_title {
-      color: $primary-color;
-      text-transform: uppercase;
-      font-weight: $base-font-weight;
-      font-size: 1rem;
-      padding: 3rem 0 1rem 0;
-    }
-
-    li {
-      color: $brown-color;
-      font-weight: $base-font-weight;
-
-      p {
-        text-decoration: none;
-      }
-
-      a {
-        color: $brown-color;
-      }
-    }
-  }
-
-  .rights {
-    text-align: center;
-    margin: 2rem 0;
-  }
-}
-
-
 .cover-image {
   position: relative;
   display: inline-block;
@@ -119,28 +72,6 @@ footer {
   }
 }
 
-footer {
-  @include breakpoint(tablet) {
-    .contacts_wrapper {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      align-content: center;
-      text-align: center;
-    }
-  }
-
-  @include breakpoint(phone) {
-    .contacts_wrapper {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      align-content: center;
-      text-align: center;
-    }
-  }
-}
-
 @include breakpoint(phone) {
 
   .logo-wrapper {
@@ -150,27 +81,54 @@ footer {
       align-content: center;
       text-align: center;
   }
-}
 
-nav {
-  @include breakpoint(tablet) {
-    .contacts_wrapper {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      align-content: center;
+  .cover-image {
+
+    .text-content {
       text-align: center;
+      color: white;
+      padding: 20px;
+      max-width: 70%;
+
+      h2 {
+        font-weight: 500;
+        font-size: 1.75rem;
+        line-height: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      h4 {
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 1rem;
+        color: $color-opacity;
+        padding-bottom: 1rem;
+      }
+
     }
   }
+}
 
-  @include breakpoint(phone) {
-    .contacts_wrapper {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      align-content: center;
-      text-align: center;
+@include breakpoint(tphone) {
+
+  .cover-image {
+    .text-content {
+      max-width: 60%;
+
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      h4 {
+        font-size: .75rem;
+      }
+
+      a {
+        font-weight: 500;
+        font-size: .75rem;
+        padding: .75rem 1rem;
+      }
     }
   }
 }
-

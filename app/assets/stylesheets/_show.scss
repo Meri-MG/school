@@ -1,0 +1,92 @@
+.show_page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: $primary-color;
+    text-align: center;
+  }
+
+  .image_wrapper {
+    margin-bottom: 1rem;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: $base-border-radius;
+    }
+  }
+
+
+    p {
+      max-width: 75%;
+      margin: 0 auto;
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+      color: $brown-color;
+      align-self: flex-start;
+    }
+
+  .tags {
+    display: flex;
+    max-width: 90%;
+    margin: 1rem auto;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+
+    .tag {
+      display: inline-block;
+      background-color: #e5e7eb;
+      color: $grey-color;
+      padding: .25rem;
+      min-width: 200px;
+      border-radius: 9999px;
+      border: 1px solid #e5e7eb;
+      font-size: .875rem;
+      line-height: 1.25rem;
+      font-weight: 600;
+      margin: 0.5rem;
+      box-sizing: border-box;
+      text-align: center;
+
+      .unique_id {
+        font-weight: 900;
+      }
+    }
+  }
+
+  .sponsored_label {
+    text-align: center;
+    font-size: 1.1rem;
+
+    .sponsored_st {
+      font-style: italic;
+      font-weight: 900;
+    }
+  }
+
+  .link_to_donate {
+    align-self: center;
+    font-size: 1.1rem;
+  }
+}
+
+
+@include breakpoint(tablet) {
+
+  .tags {
+    flex-direction: column;
+  }
+}
+
+@include breakpoint(phone) {
+
+  .tags {
+    flex-direction: column;
+  }
+}

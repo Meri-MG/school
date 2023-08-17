@@ -6,6 +6,10 @@
   } @else if $point == phone {
     @media (max-width: 767px) {
       @content;
+    } 
+  } @else if $point == tphone {
+    @media (max-width: 487px) {
+      @content;
     }
   } @else if $point == desktop {
     @media (min-width: 1125px) {
