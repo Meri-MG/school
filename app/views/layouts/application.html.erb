@@ -6,17 +6,17 @@
     <%= favicon_link_tag 'alc_logo.ico' %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag 'application', media: 'all', "data-turbo-track": "reload" %>
 
-    <%= stylesheet_link_tag "application", "pagy-nav", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-
   </head>
 
-  <body class=bg-white>
-    <main class="container mx-auto px-4 flex flex-col">
+  <body>
+    <header>
       <%= render 'shared/navbar' %>
-      <div class="px-5">
+    </header>
+    <main>
+      <div>
         <%= yield %>
       </div>
     </main>
@@ -24,18 +24,6 @@
       <%= render 'shared/footer' %>
     </footer>
   <script>
-      function setupNavbarToggle() {
-      const button = document.querySelector('[data-collapse-toggle="navbar-cta"]');
-      const content = document.getElementById('navbar-cta');
-
-      button.addEventListener('click', function() {
-        content.classList.toggle('hidden'); 
-      });
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-      setupNavbarToggle();
-    });
   </script>
   </body>
 </html>

@@ -1,0 +1,134 @@
+
+.logo-wrapper {
+  max-width: 30%;
+}
+
+.alc_logo {
+  width: 250px;
+  height: 200px;
+}
+
+.cover-image {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: $base-border-radius;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Adjust the overlay color and opacity */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .text-content {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    max-width: 80%;
+
+    h2 {
+      font-weight: 600;
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    h4 {
+      font-weight: 600;
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+      color: $color-opacity;
+    }
+
+    a {
+      font-weight: 500;
+      font-size: 1rem;
+      padding: 0.5rem 1.75rem;
+      text-transform: uppercase;
+      color: $color-opacity;
+      border: 2px solid $color-opacity;
+      border-radius: $base-border-radius;
+      padding: 1rem 1.8rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: white;
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+}
+
+@include breakpoint(phone) {
+
+  .logo-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      text-align: center;
+  }
+
+  .cover-image {
+
+    .text-content {
+      text-align: center;
+      color: white;
+      padding: 20px;
+      max-width: 70%;
+
+      h2 {
+        font-weight: 500;
+        font-size: 1.75rem;
+        line-height: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      h4 {
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 1rem;
+        color: $color-opacity;
+        padding-bottom: 1rem;
+      }
+
+    }
+  }
+}
+
+@include breakpoint(tphone) {
+
+  .cover-image {
+    .text-content {
+      max-width: 60%;
+
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      h4 {
+        font-size: .75rem;
+      }
+
+      a {
+        font-weight: 500;
+        font-size: .75rem;
+        padding: .75rem 1rem;
+      }
+    }
+  }
+}

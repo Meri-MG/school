@@ -1,0 +1,131 @@
+header {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      align-content: center;
+      width: 70%;
+
+      li {
+        font-size: 1.2rem;
+
+        .social_icons {
+          width: 25px;
+          height: 25px;
+          fill: $primary-color;
+          &:hover {
+            fill: $secondary-color;
+          }
+        }
+
+        .donate_button {
+          padding: .5rem .75rem;
+          border: 2px solid $primary-color;
+          border-radius: $base-border-radius;
+
+          &:hover {
+            border-color: $secondary-color;
+            color: $secondary-color;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    .hamburgers {
+      align-self: center;
+      align-items: center;
+      cursor: pointer;
+    
+      .bar1, .bar2, .bar3 {
+        display: block;  
+        width: 35px;  
+        height: 3px;  
+        margin: 5px auto;  
+        background-color:$primary-color; 
+        transition: 0.4s; 
+      }
+    
+      .bar1 {
+        &.change {
+          transform: rotate(45deg) translate(8px,3px);
+        }
+      }
+      .bar2 {
+        &.change {
+          opacity: 0;
+        }
+      }
+      .bar3 {
+        &.change {
+          transform: rotate(-45deg) translate(8px,-3px);
+        }
+      }
+    
+    }
+    
+    .mobile_menu {  
+      position:absolute;   
+      right:0px;  
+      flex-direction:column;  
+      background-color: #f5f5f5;
+      border-radius:0px 0px 0px 20px;  
+      transition:transform 0.3s ease-in;  
+      transform:translate(100%);  
+      z-index: 20;
+      padding: 2rem 0;
+      min-width: 28%;
+      height: 30vh;
+    
+      &.change{  
+        transform:translate(0%);  
+        } 
+      } 
+  }
+}
+
+
+@include breakpoint(desktop) {
+  .hamburgers {
+    display: none;
+  }
+
+  .desktop {
+    display: flex;
+  }
+} 
+
+@include breakpoint(tablet) {
+
+  .hamburgers {
+    display: block;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .mobile_menu {
+    display: flex;
+  }
+}
+
+@include breakpoint(phone) {
+
+  .hamburgers {
+    display: block;
+  }
+
+  .mobile_menu {
+    display: flex;
+  }
+
+  .desktop {
+    display: none;
+  }
+}

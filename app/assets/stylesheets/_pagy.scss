@@ -1,0 +1,37 @@
+.pagination {
+  display: flex;
+  flex-direction: row;
+  padding: 24px;
+  border-radius: 6px;
+  box-shadow: 0px 4px 8px 0px rgba(31, 41, 55, 0.14);
+  background-color: #fff;
+  position: relative;
+  max-width: 50%;
+  margin: 0 auto;
+
+  span {
+    padding: 8px 12px;
+    margin: 0 auto;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #f4f4f4;
+      }
+
+      &.active {
+        background-color: #067e5b;
+        color: white;
+        border: none;
+
+        &:hover {
+          background-color: #acc174;
+          color: white;
+          border: none;
+      }
+    }
+  }
+}
