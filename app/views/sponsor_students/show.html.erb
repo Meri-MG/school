@@ -23,7 +23,7 @@
   <p class='font-semibold mt-2'>
     Sponsored Status: <span class="italic font-semibold"><%= @sponsor_student.sponsored_status&.humanize %></span>
   </p>
-  <%= link_to 'How to donate', how_to_donate_path, class: 'block mt-4 lg:inline-block lg:mt-0 text-dark-green font-extrabold text-base hover:text-light-green' %>
+  <%= link_to 'How to donate', sponsor_individual_student_path(@sponsor_student), class: 'block mt-4 lg:inline-block lg:mt-0 text-dark-green font-extrabold text-base hover:text-light-green' %>
 
   <% if Rails.env.development? %>
     <%= button_to 'Delete', sponsor_student_path(@sponsor_student), method: :delete %>

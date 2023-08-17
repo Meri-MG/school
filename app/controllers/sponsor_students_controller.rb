@@ -41,6 +41,9 @@ class SponsorStudentsController < ApplicationController
     redirect_to sponsor_students_path
   end
 
+  def sponsor_individual_student
+    @sponsor_student = SponsorStudent.find(params[:id])
+  end
   private
 
   def sponsors_student_params

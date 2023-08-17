@@ -1,6 +1,6 @@
 .card-grid {
   display: grid;
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto 5rem auto;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   grid-template-rows: auto;
@@ -57,6 +57,7 @@
     .unsponsored {
       margin: 1.25rem 0;
       font-weight: 800;
+      font-style: italic;
     }
 
     a {
@@ -75,11 +76,15 @@
     }
 
     .sponsor_student {
+      padding: .5rem .75rem;
+      border: 2px solid $primary-color;
       color: $primary-color;
+      border-radius: $base-border-radius;
 
       &:hover {
-        text-decoration: none;
+        border-color: $secondary-color;
         color: $secondary-color;
+        text-decoration: none;
       }
     }
   }
