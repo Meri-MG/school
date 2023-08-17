@@ -1,44 +1,3 @@
-header {
-  nav {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-
-    ul {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      align-content: center;
-      width: 70%;
-
-      li {
-        font-size: 1.2rem;
-
-        .social_icons {
-          width: 25px;
-          height: 25px;
-          fill: $primary-color;
-          &:hover {
-            fill: $secondary-color;
-          }
-        }
-
-        .donate_button {
-          padding: .5rem .75rem;
-          border: 2px solid $primary-color;
-          border-radius: $base-border-radius;
-
-          &:hover {
-            border-color: $secondary-color;
-            color: $secondary-color;
-            text-decoration: none;
-          }
-        }
-      }
-    }
-
-  }
-}
 
 .logo-wrapper {
   max-width: 30%;
@@ -159,3 +118,59 @@ footer {
     }
   }
 }
+
+footer {
+  @include breakpoint(tablet) {
+    .contacts_wrapper {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      text-align: center;
+    }
+  }
+
+  @include breakpoint(phone) {
+    .contacts_wrapper {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      text-align: center;
+    }
+  }
+}
+
+@include breakpoint(phone) {
+
+  .logo-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      text-align: center;
+  }
+}
+
+nav {
+  @include breakpoint(tablet) {
+    .contacts_wrapper {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      text-align: center;
+    }
+  }
+
+  @include breakpoint(phone) {
+    .contacts_wrapper {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      text-align: center;
+    }
+  }
+}
+

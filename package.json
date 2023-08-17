@@ -6,7 +6,8 @@
     "@hotwired/turbo-rails": "^7.3.0",
     "autoprefixer": "^10.4.14",
     "esbuild": "^0.18.12",
-    "postcss": "^8.4.25"
+    "postcss": "^8.4.25",
+    "stimulus": "^3.2.2"
   },
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets",

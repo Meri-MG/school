@@ -1,32 +1,47 @@
-<nav>
+<nav data-controller="menu-toggle">
     <div class="logo-wrapper">
       <%= link_to root_path, class: "" do %>
         <%= image_tag 'logo.jpg', class: 'alc_logo', alt: 'alc-logo' %>
       <% end %>
     </div>
-  <%# <div class="flex md:order-2">
-      <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-600 rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-cta" aria-expanded="false">
-        <span class="sr-only">Open main menu</span>
-        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-        </svg>
-    </button>
-  </div> %>
-    <ul>
+    <ul class="mobile_menu" data-action="click->menu-toggle#toggleMenu"  data-menu-toggle-target="menu">
       <li>
-        <%= link_to 'Home', root_path, class: "" %>
+        <%= link_to 'Home', root_path, class: 'menu__item' %>
       </li>
       <li>
-        <%= link_to 'About', root_path(anchor: 'about'), class: "" %>
+        <%= link_to 'About', root_path(anchor: 'about'), class: 'menu__item' %>
       </li>
       <li>
-        <%= link_to 'Students to sponsor', sponsor_students_path, class: '' %>
+        <%= link_to 'Students to sponsor', sponsor_students_path, class: 'menu__item' %>
       </li>
       <li>
-        <%= link_to 'How to donate', how_to_donate_path, class: '' %>
+        <%= link_to 'How to donate', how_to_donate_path, class: 'menu__item' %>
       </li>
       <li>
-        <%= link_to 'Contact', root_path(anchor: 'contact-details'), class: "" %>
+        <%= link_to 'Contact', root_path(anchor: 'contact-details'), class: 'menu__item' %>
+      </li>
+      </ul>
+      <div class="hamburgers" data-action="click->menu-toggle#toggleMenu">
+        <span class="bar1" data-menu-toggle-target="hamburger"></span>
+        <span class="bar2" data-menu-toggle-target="hamburger"></span>
+        <span class="bar3" data-menu-toggle-target="hamburger"></span>
+      </div>
+    
+    <ul class="menu desktop" >
+      <li>
+        <%= link_to 'Home', root_path, class: 'menu__item' %>
+      </li>
+      <li>
+        <%= link_to 'About', root_path(anchor: 'about'), class: 'menu__item' %>
+      </li>
+      <li>
+        <%= link_to 'Students to sponsor', sponsor_students_path, class: 'menu__item' %>
+      </li>
+      <li>
+        <%= link_to 'How to donate', how_to_donate_path, class: 'menu__item' %>
+      </li>
+      <li>
+        <%= link_to 'Contact', root_path(anchor: 'contact-details'), class: 'menu__item' %>
       </li>
       <li class="mt-2 md:mt-0">
         <a href="https://www.instagram.com/adventistlearningcenter/" target="_blank" rel="noopener">
