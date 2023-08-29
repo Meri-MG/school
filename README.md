@@ -1,24 +1,65 @@
-# README
+# Adventist Learning Center
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Adventist Learning Center provides quality education to Syrian and Kurdish Refugees living in Beirut, Lebanon. Teachers from around the world come together to create a safe, stable, and loving environment for the kids. It is only through the generosity of private individuals around the world that it is able to remain open each year. This simple website was built to reach a bigger audience and ease the process of gathering donations for the ALC students.
 
-Things you may want to cover:
+## Built With
 
-* Ruby version
+- Ruby
+- Ruby on Rails
+- SCSS
+- PostgreSQL
 
-* System dependencies
+## Getting Started
 
-* Configuration
+- [Install Ruby](https://www.ruby-lang.org/en/documentation/installation/) on your local machine 
+- [Install Ruby on Rails](https://guides.rubyonrails.org/v5.1/getting_started.html)
+- Clone [this repository](https://github.com/Meri-MG/school)
+  ```
+  git clone git@github.com:Meri-MG/school.git
+  ```
+- To get started, In the root directory run:
+  ```
+  gem install bundler
+  ```
+  Then run:
+  ```
+  bundle install
+  ```
+  To start the server run: 
 
-* Database creation
+  ```
+  rails s
+  ```
+  Open the browser with `localhost:3000`
 
-* Database initialization
+  
+## After installing bundle
 
-* How to run the test suite
+Please run the following commands `rails db:create` `rails db:migrate` `rails s`
 
-* Services (job queues, cache servers, search engines, etc.)
+## Tests
+```
+rails test
+```
 
-* Deployment instructions
+## Authors
 
-* ...
+:woman: **Meri Gogichashvili**
+
+- [GitHub](https://github.com/Meri-MG)
+- [LinkedIn](https://www.linkedin.com/in/meri-gogichashvili/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/Meri-MG/school/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+[Adventist Learning Center](https://www.facebook.com/adventistlearningcenter)
+
