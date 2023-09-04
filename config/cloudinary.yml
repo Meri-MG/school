@@ -1,11 +1,11 @@
-development: 
-  cloud_name: "ddsaap4pm"
-  api_key: "888238513138866"
-  api_secret: "ml-v1qU7F6936BW4WaiAXQjNNbo"
-  environment_variable: CLOUDINARY_URL=cloudinary://888238513138866:ml-v1qU7F6936BW4WaiAXQjNNbo@ddsaap4pm
-  secure: true
-  static_file_support: false
-  enhance_image_tag: true
+# development: 
+#   cloud_name: "ddsaap4pm"
+#   api_key: "888238513138866"
+#   api_secret: "ml-v1qU7F6936BW4WaiAXQjNNbo"
+#   environment_variable: CLOUDINARY_URL=cloudinary://888238513138866:ml-v1qU7F6936BW4WaiAXQjNNbo@ddsaap4pm
+#   secure: true
+#   static_file_support: false
+#   enhance_image_tag: true
 
 production:
   cloud_name: "ddsaap4pm"

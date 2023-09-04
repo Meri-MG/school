@@ -77,3 +77,6 @@ end
 gem 'sass-rails', '~> 6.0'
 gem 'cloudinary'
 gem 'pagy', '~> 6.0'
+gem 'rails_admin', '~> 3.0'
+gem 'sassc-rails'
+gem 'devise'
