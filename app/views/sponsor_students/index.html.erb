@@ -4,7 +4,11 @@
     <div class="card">
         <div class="card_image">
           <% if student.main_image.attached? %>
-            <%= cl_image_tag(student.main_image.key, crop: :scale, type: :upload) %>
+            <% if Rails.env.production? %>
+              <%= cl_image_tag(student.main_image.key, crop: :scale, type: :upload) %>
+            <% else %>
+              <%= image_tag(student.main_image) %>
+            <% end %>
           <% end %>
         </div>
         <div class="card_content">

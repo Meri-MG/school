@@ -13,7 +13,9 @@
   display: inline-block;
   overflow: hidden;
   border-radius: $base-border-radius;
-
+  width: 100%;
+  margin: 0 auto;
+  
   img {
     display: block;
     width: 100%;
