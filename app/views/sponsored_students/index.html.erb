@@ -1,32 +1,36 @@
-<div class="card-grid">
-    <% if @sponsored_students.any? %>
-      <% @sponsored_students.each do |student| %>
-    <div class="card">
-        <div class="card_image">
-          <% if student.main_image.attached? %>
-            <% if Rails.env.production? %>
-              <%= cl_image_tag(student.main_image.key, crop: :scale, type: :upload) %>
-            <% else %>
-              <%= image_tag(student.main_image) %>
+<div class="grid_wrapper">
+  <div class="card-grid">
+      <% if @sponsored_students.any? %>
+        <% @sponsored_students.each do |student| %>
+      <div class="card">
+          <div class="card_image">
+            <% if student.main_image.attached? %>
+              <% if Rails.env.production? %>
+                <%= cl_image_tag(student.main_image.key, crop: :scale, type: :upload) %>
+              <% else %>
+                <%= image_tag(student.main_image) %>
+              <% end %>
             <% end %>
-          <% end %>
-        </div>
-        <div class="card_content">
-          <p class="card_title"><%= student.name %></p>
-          <p><em>Donate ID: </em><span><%= student.unique_identifier %></span></p>
-          <p><em>Age: </em><span><%= student.age %> years old</p></span>
-          <p><em>Grade: </em><span><%= student.grade %></p></span>
-          <p class="unsponsored"><%= student.sponsored_status&.humanize %></p>
-          <div class="check_story">
-            <%= link_to "Check #{student.name}'s story", sponsor_student_path(student) %>
           </div>
-          <div>
-            <%= link_to "Sponsor #{student.name}", sponsor_individual_student_path(student), class: 'sponsor_student' %>
+          <div class="card_content">
+            <p class="card_title"><%= student.name %></p>
+            <p><em>Donate ID: </em><span><%= student.unique_identifier %></span></p>
+            <p><em>Age: </em><span><%= student.age %> years old</p></span>
+            <p><em>Grade: </em><span><%= student.grade %></p></span>
+            <p class="unsponsored"><%= student.sponsored_status&.humanize %></p>
+            <div class="check_story">
+              <%= link_to "Check #{student.name}'s story", sponsor_student_path(student) %>
+            </div>
+            <% if student.sponsored_status == 'unsponsored' %>
+              <div>
+                <%= link_to "Sponsor #{student.name}", sponsor_individual_student_path(student), class: 'sponsor_student' %>
+              </div>
+            <% end %>
           </div>
         </div>
-  </div>
+        <% end %>
       <% end %>
-    <% end %>
+  </div>
 </div>
 <%== pagy_nav(@pagy) %>
 
