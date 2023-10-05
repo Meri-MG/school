@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# ALC students to sponsor
 class SponsorStudent < ApplicationRecord
   has_one_attached :main_image, dependent: :destroy
 
@@ -14,7 +17,7 @@ class SponsorStudent < ApplicationRecord
   def generate_unique_identifier
     loop do
       length = 6
-      self.unique_identifier = SecureRandom.random_number(10**6).to_s.rjust(6, '0')
+      self.unique_identifier = SecureRandom.random_number(10**length).to_s.rjust(length, '0')
 
       break unless SponsorStudent.exists?(unique_identifier: unique_identifier)
     end

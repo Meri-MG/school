@@ -1,4 +1,6 @@
-class SponsorStudentsController < ApplicationController
+# frozen_string_literal: true
+
+
   def index
     @sponsor_students = SponsorStudent.where(sponsored_status: 'unsponsored').order(created_at: :asc)
     @pagy, @sponsor_students = pagy(@sponsor_students)
