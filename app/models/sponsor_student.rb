@@ -6,13 +6,14 @@ class SponsorStudent < ApplicationRecord
 
   has_one_attached :secondary_image, dependent: :destroy
 
+  has_many :student_updates, foreign_key: :sponsor_student_id
+
+
   validates :name, :description, :age, presence: true
 
   enum sponsored_status: { sponsored: 'sponsored', unsponsored: 'unsponsored' }
 
-  before_create :generate_unique_identifier
-
-  private
+  before_save :generate_unique_identifier
 
   def generate_unique_identifier
     loop do
