@@ -6,9 +6,6 @@
     </div>
     <ul class="mobile_menu" data-action="click->menu-toggle#toggleMenu"  data-menu-toggle-target="menu">
       <li>
-        <%= link_to 'Home', root_path, class: 'menu__item' %>
-      </li>
-      <li>
         <%= link_to 'About', root_path(anchor: 'about'), class: 'menu__item' %>
       </li>
       <li>
@@ -31,9 +28,6 @@
       </div>
     
     <ul class="menu desktop" >
-      <li>
-        <%= link_to 'Home', root_path, class: 'menu__item' %>
-      </li>
       <li>
         <%= link_to 'About', root_path(anchor: 'about'), class: 'menu__item' %>
       </li>
