@@ -21,11 +21,6 @@
             <div class="check_story">
               <%= link_to "Check #{student.name}'s story", sponsor_student_path(student) %>
             </div>
-            <% if student.sponsored_status == 'unsponsored' %>
-              <div>
-                <%= link_to "Sponsor #{student.name}", sponsor_individual_student_path(student), class: 'sponsor_student' %>
-              </div>
-            <% end %>
           </div>
         </div>
         <% end %>

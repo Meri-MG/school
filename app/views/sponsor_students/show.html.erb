@@ -31,9 +31,11 @@
   <p class="sponsored_label">
     Sponsored Status: <span class="sponsored_st"><%= @sponsor_student.sponsored_status&.humanize %></span>
   </p>
-  <div class="link_to_donate">
-    <%= link_to 'How to donate', sponsor_individual_student_path(@sponsor_student) %>
-  </div>
+  <% if @sponsor_student.sponsored_status == 'unsponsored' %>
+    <div class="link_to_donate">
+      <%= link_to 'How to donate', sponsor_individual_student_path(@sponsor_student) %>
+    </div>
+  <% end %>
 
 
   <% if Rails.env.development? %>

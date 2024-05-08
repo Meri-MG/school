@@ -11,7 +11,7 @@ class SponsorStudentTest < ActiveSupport::TestCase
   test 'unique identifier' do
     sponsor = SponsorStudent.new(name: 'Mariam', description: 'good student', age: 12)
     assert_nil sponsor.unique_identifier
-    byebug
+
     sponsor.save
     assert sponsor.unique_identifier.present?
   end
