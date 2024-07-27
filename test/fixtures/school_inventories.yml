@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+chair:
+  name: Chair
+  quantity: 12
+  description: Table chairs for the classrooms
+  sponsored: unsponsored
+
+table:
+  name: Table
+  quantity: 1
+  description: Tables for the classrooms
+  sponsored: unsponsored

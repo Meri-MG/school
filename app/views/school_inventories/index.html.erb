@@ -1,0 +1,32 @@
+<h1>School Inventories</h1>
+
+<%= link_to 'New School Inventory', new_school_inventory_path, class: 'btn btn-primary' %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Quantity</th>
+      <th>Sponsored</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @school_inventories.each do |inventory| %>
+      <tr>
+        <td><%= inventory.name %></td>
+        <td><%= inventory.description %></td>
+        <td><%= inventory.quantity %></td>
+        <td><%= inventory.sponsored ? 'Yes' : 'No' %></td>
+        <td>
+          <%= link_to 'View', school_inventory_path(inventory), class: 'btn btn-info' %>
+          <% if current_user&.admin? %>
+            <%= link_to 'Edit', edit_school_inventory_path(inventory), class: 'btn btn-warning' %>
+            <%= link_to 'Destroy', school_inventory_path(inventory), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

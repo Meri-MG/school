@@ -1,0 +1,37 @@
+<%= form_with(model: school_inventory, local: true) do |form| %>
+  <% if school_inventory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(school_inventory.errors.count, "error") %> prohibited this school inventory from being saved:</h2>
+
+      <ul>
+        <% school_inventory.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantity %>
+    <%= form.number_field :quantity, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sponsored %>
+    <%= form.check_box :sponsored %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

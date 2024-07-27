@@ -1,0 +1,26 @@
+<h1>School Inventory Details</h1>
+
+<p>
+  <strong>Name:</strong>
+  <%= @school_inventory.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @school_inventory.description %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @school_inventory.quantity %>
+</p>
+
+<p>
+  <strong>Sponsored:</strong>
+  <%= @school_inventory.sponsored ? 'Yes' : 'No' %>
+</p>
+
+<% if current_user&.admin? %>
+  <%= link_to 'Edit', edit_school_inventory_path(@school_inventory), class: 'btn btn-warning' %>
+  <%= link_to 'Back', school_inventories_path, class: 'btn btn-secondary' %>
+<% end %>
