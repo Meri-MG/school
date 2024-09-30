@@ -6,12 +6,12 @@ class StudentsController < ApplicationController
     @pagy, @students = pagy(@students)
   end
 
-  def new
-    @student = Student.new
-  end
-
   def show
     @student = Student.find(params[:id])
+  end
+
+  def new
+    @student = Student.new
   end
 
   def edit
@@ -52,7 +52,7 @@ class StudentsController < ApplicationController
 
   def student_params
     params.require(:student)
-          .permit(:name, :description, :age, :grade, :fav_food, :status, 
+          .permit(:name, :description, :age, :grade, :fav_food, :status,
                   :fav_color, :main_image, :secondary_image, :hobbies)
   end
 end

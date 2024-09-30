@@ -1,7 +1,9 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class StudentTest < ActiveSupport::TestCase
-  test "validations" do
+  test 'validations' do
     student = Student.create
     assert_includes student.errors[:name], "can't be blank"
     assert_includes student.errors[:description], "can't be blank"
