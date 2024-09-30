@@ -2,7 +2,7 @@
 
 class SponsorStudentsController < ApplicationController
   def index
-    @sponsor_students = SponsorStudent.where(sponsored_status: 'unsponsored').order(created_at: :asc)
+    @sponsor_students = SponsorStudent.where(status: 'unsponsored').order(created_at: :asc)
     @pagy, @sponsor_students = pagy(@sponsor_students)
   end
 
@@ -51,7 +51,7 @@ class SponsorStudentsController < ApplicationController
 
   def sponsors_student_params
     params.require(:sponsor_student)
-          .permit(:name, :description, :age, :grade, :fav_food, :sponsored_status, 
+          .permit(:name, :description, :age, :grade, :fav_food, :status, 
                   :fav_color, :main_image, :secondary_image, :hobbies)
   end
 end

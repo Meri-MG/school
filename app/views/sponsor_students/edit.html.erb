@@ -40,8 +40,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :sponsored_status %>
-    <%= f.select :sponsored_status, options_for_select(SponsorStudent.sponsored_statuses.keys.map { |status| [status.humanize, status] }, @sponsor_student.sponsored_status) %>
+    <%= f.label :status %>
+    <%= f.select :status, options_for_select(SponsorStudent.statuses.keys.map { |status| [status.humanize, status] }, @sponsor_student.status) %>
   </div>
 
   <%= f.submit 'Update' %>

@@ -29,9 +29,9 @@
     <p class="tag">Hobbies: <span><%= @sponsor_student.hobbies %></span></p>
   </div>
   <p class="sponsored_label">
-    Sponsored Status: <span class="sponsored_st"><%= @sponsor_student.sponsored_status&.humanize %></span>
+    Sponsored Status: <span class="sponsored_st"><%= @sponsor_student.status&.humanize %></span>
   </p>
-  <% if @sponsor_student.sponsored_status == 'unsponsored' %>
+  <% if @sponsor_student.status == 'unsponsored' %>
     <div class="link_to_donate">
       <%= link_to 'How to donate', sponsor_individual_student_path(@sponsor_student) %>
     </div>

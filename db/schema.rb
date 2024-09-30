@@ -46,7 +46,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_30_085952) do
     t.string "name", null: false
     t.string "description", null: false
     t.string "grade"
-    t.string "sponsored_status"
+    t.string "status"
     t.integer "age", null: false
     t.string "fav_food"
     t.string "fav_color"

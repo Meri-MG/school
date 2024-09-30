@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# ALC students to sponsor
+# ALC students
 class SponsorStudent < ApplicationRecord
   has_one_attached :main_image, dependent: :destroy
 
@@ -11,7 +11,7 @@ class SponsorStudent < ApplicationRecord
 
   validates :name, :description, :age, presence: true
 
-  enum sponsored_status: { sponsored: 'sponsored', unsponsored: 'unsponsored' }
+  enum status: { sponsored: 'sponsored', unsponsored: 'unsponsored' }
 
   before_save :generate_unique_identifier
 
