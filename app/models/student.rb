@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 # ALC students
-class SponsorStudent < ApplicationRecord
+class Student < ApplicationRecord
   has_one_attached :main_image, dependent: :destroy
 
   has_one_attached :secondary_image, dependent: :destroy
 
-  has_many :student_updates, foreign_key: :sponsor_student_id
+  has_many :student_updates, foreign_key: :student_id
 
 
   validates :name, :description, :age, presence: true
@@ -20,7 +20,7 @@ class SponsorStudent < ApplicationRecord
       length = 6
       self.unique_identifier = SecureRandom.random_number(10**length).to_s.rjust(length, '0')
 
-      break unless SponsorStudent.exists?(unique_identifier: unique_identifier)
+      break unless Student.exists?(unique_identifier: unique_identifier)
     end
   end
 end

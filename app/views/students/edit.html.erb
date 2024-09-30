@@ -1,6 +1,7 @@
-<%= form_with(model: @sponsor_student, url: sponsor_students_path, local: true) do |f| %>
+<%= form_with(model: @student, url: student_path(@student), local: true) do |f| %>
 
-  <%= render "shared/error_messages", resource: @sponsor_student %>
+  <%= render "shared/error_messages", resource: @student %>
+
   <%= f.file_field :main_image, direct_upload: true %>
   <%= f.file_field :secondary_image, direct_upload: true %>
   <div class="field">
@@ -40,8 +41,8 @@
 
   <div class="field">
     <%= f.label :status %>
-    <%= f.select :status, options_for_select(SponsorStudent.statuses.keys.map { |status| [status.humanize, status] }, @sponsor_student.status) %>
+    <%= f.select :status, options_for_select(Student.statuses.keys.map { |status| [status.humanize, status] }, @student.status) %>
   </div>
 
-  <%= f.submit 'Create' %>
+  <%= f.submit 'Update' %>
 <% end %>

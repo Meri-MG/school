@@ -1,6 +1,6 @@
 <div class="card-grid">
-    <% if @sponsor_students.any? %>
-      <% @sponsor_students.each do |student| %>
+    <% if @students.any? %>
+      <% @students.each do |student| %>
     <div class="card">
         <div class="card_image">
           <% if student.main_image.attached? %>
@@ -18,10 +18,10 @@
           <p><em>Grade: </em><span><%= student.grade %></p></span>
           <p class="unsponsored"><%= student.status&.humanize %></p>
           <div class="check_story">
-            <%= link_to "Check #{student.name}'s story", sponsor_student_path(student) %>
+            <%= link_to "Check #{student.name}'s story", student_path(student) %>
           </div>
           <div>
-            <%= link_to "Sponsor #{student.name}", sponsor_individual_student_path(student), class: 'sponsor_student' %>
+            <%= link_to "Sponsor #{student.name}", sponsor_individual_student_path(student), class: 'student' %>
           </div>
         </div>
   </div>
@@ -31,5 +31,5 @@
 <%== pagy_nav(@pagy) %>
 
 <% if Rails.env.development? %>
-  <%= link_to 'New student', new_sponsor_student_path %>
+  <%= link_to 'New student', new_student_path %>
 <% end %>

@@ -42,7 +42,17 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_30_085952) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "sponsor_students", force: :cascade do |t|
+  create_table "student_updates", force: :cascade do |t|
+    t.string "season", null: false
+    t.string "title", null: false
+    t.text "description", null: false
+    t.integer "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["student_id"], name: "index_student_updates_on_student_id"
+  end
+
+  create_table "students", force: :cascade do |t|
     t.string "name", null: false
     t.string "description", null: false
     t.string "grade"
@@ -54,17 +64,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_30_085952) do
     t.string "unique_identifier", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["unique_identifier"], name: "index_sponsor_students_on_unique_identifier"
-  end
-
-  create_table "student_updates", force: :cascade do |t|
-    t.string "season", null: false
-    t.string "title", null: false
-    t.text "description", null: false
-    t.integer "sponsor_student_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["sponsor_student_id"], name: "index_student_updates_on_sponsor_student_id"
+    t.index ["unique_identifier"], name: "index_students_on_unique_identifier"
   end
 
   create_table "users", force: :cascade do |t|
