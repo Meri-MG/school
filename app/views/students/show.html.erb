@@ -1,46 +1,47 @@
 
-<div class="show_page">
-  <h1>Meet <%= @student.name.capitalize %></h1>
-  <div class="image_wrapper">
-    <% if Rails.env.production? %>
+<div class="content-wrapper">
+  <div class="show_page">
+    <h1>Meet <%= @student.name.capitalize %></h1>
+    <div class="image_wrapper">
+      <% if Rails.env.production? %>
+        <% if @student.secondary_image.attached? %>
+          <%= cl_image_tag(@student.secondary_image.key, width: 600, crop: :scale, type: :upload) %>
+        <% elsif @student.main_image.attached? %>
+          <%= cl_image_tag(@student.main_image.key, width: 600, crop: :scale, type: :upload) %>
+        <% end %>
+      <% else %>
       <% if @student.secondary_image.attached? %>
-        <%= cl_image_tag(@student.secondary_image.key, width: 600, crop: :scale, type: :upload) %>
-      <% elsif @student.main_image.attached? %>
-        <%= cl_image_tag(@student.main_image.key, width: 600, crop: :scale, type: :upload) %>
+          <%= image_tag(@student.secondary_image, width: 600) %>
+        <% elsif @student.main_image.attached? %>
+          <%= image_tag(@student.main_image, width: 600) %>
+        <% end %>
       <% end %>
-    <% else %>
-     <% if @student.secondary_image.attached? %>
-        <%= image_tag(@student.secondary_image, width: 600) %>
-      <% elsif @student.main_image.attached? %>
-        <%= image_tag(@student.main_image, width: 600) %>
-      <% end %>
+    </div>
+      <%= simple_format(@student.description) %>
+
+    <div class="tags">
+      <p class="tag">Donate ID: <span class="unique_id"><%= @student.unique_identifier %></span></p>
+      <p class="tag">Age: <span><%= @student.age %> years old</span></p>
+      <p class="tag">Grade: <span><%= @student.grade %></span></p>
+    </div>
+    <div class="tags">
+      <p class="tag">Favorite color: <span><%= @student.fav_color %></span></p>
+      <p class="tag">Favorite food: <span><%= @student.fav_food %></span></p>
+      <p class="tag">Hobbies: <span><%= @student.hobbies %></span></p>
+    </div>
+    <p class="sponsored_label">
+      Sponsored Status: <span class="sponsored_st"><%= @student.status&.humanize %></span>
+    </p>
+    <% if @student.status == 'unsponsored' %>
+      <div class="link_to_donate">
+        <%= link_to 'How to donate', sponsor_individual_student_path(@student) %>
+      </div>
+    <% end %>
+
+
+    <% if Rails.env.development? %>
+      <%= button_to 'Delete', student_path(@student), method: :delete %>
+      <%= link_to 'Edit', edit_student_path(@student) %>
     <% end %>
   </div>
-    <%= simple_format(@student.description) %>
-
-   <div class="tags">
-    <p class="tag">Donate ID: <span class="unique_id"><%= @student.unique_identifier %></span></p>
-    <p class="tag">Age: <span><%= @student.age %> years old</span></p>
-    <p class="tag">Grade: <span><%= @student.grade %></span></p>
-  </div>
-  <div class="tags">
-    <p class="tag">Favorite color: <span><%= @student.fav_color %></span></p>
-    <p class="tag">Favorite food: <span><%= @student.fav_food %></span></p>
-    <p class="tag">Hobbies: <span><%= @student.hobbies %></span></p>
-  </div>
-  <p class="sponsored_label">
-    Sponsored Status: <span class="sponsored_st"><%= @student.status&.humanize %></span>
-  </p>
-  <% if @student.status == 'unsponsored' %>
-    <div class="link_to_donate">
-      <%= link_to 'How to donate', sponsor_individual_student_path(@student) %>
-    </div>
-  <% end %>
-
-
-  <% if Rails.env.development? %>
-    <%= button_to 'Delete', student_path(@student), method: :delete %>
-    <%= link_to 'Edit', edit_student_path(@student) %>
-  <% end %>
 </div>
-
