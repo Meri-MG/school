@@ -27,7 +27,7 @@ RailsAdmin.config do |config|
   # config.show_gravatar = true
 
 
-  config.model 'Student' do
+  config.model 'SponsorStudent' do
 
 
     exclude_fields :unique_identifier

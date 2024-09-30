@@ -7,19 +7,8 @@ asmaa:
   fav_food: spaghetti
   fav_color: yellow
   hobbies: [cooking]
-  status: unsponsored
+  sponsored_status: unsponsored
   unique_identifier: 594029
-
-hadil:
-  name: Hadil
-  age: 12
-  grade: 8th grade
-  description: A girl who strives hard to become the best nurse.
-  fav_food: spaghetti
-  fav_color: yellow
-  hobbies: [drawing]
-  status: sponsored
-  unique_identifier: 594030
 
 # two: {}
 # column: value

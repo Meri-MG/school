@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_30_085952) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_13_140261) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,21 +42,11 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_30_085952) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "student_updates", force: :cascade do |t|
-    t.string "season", null: false
-    t.string "title", null: false
-    t.text "description", null: false
-    t.integer "student_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["student_id"], name: "index_student_updates_on_student_id"
-  end
-
-  create_table "students", force: :cascade do |t|
+  create_table "sponsor_students", force: :cascade do |t|
     t.string "name", null: false
     t.string "description", null: false
     t.string "grade"
-    t.string "status"
+    t.string "sponsored_status"
     t.integer "age", null: false
     t.string "fav_food"
     t.string "fav_color"
@@ -64,7 +54,17 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_30_085952) do
     t.string "unique_identifier", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["unique_identifier"], name: "index_students_on_unique_identifier"
+    t.index ["unique_identifier"], name: "index_sponsor_students_on_unique_identifier"
+  end
+
+  create_table "student_updates", force: :cascade do |t|
+    t.string "season", null: false
+    t.string "title", null: false
+    t.text "description", null: false
+    t.integer "sponsor_student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sponsor_student_id"], name: "index_student_updates_on_sponsor_student_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -75,7 +75,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_30_085952) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "admin", default: false
+    t.boolean "admin", default: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

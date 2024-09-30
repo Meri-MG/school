@@ -1,0 +1,46 @@
+
+<div class="show_page">
+  <h1>Meet <%= @sponsor_student.name.capitalize %></h1>
+  <div class="image_wrapper">
+    <% if Rails.env.production? %>
+      <% if @sponsor_student.secondary_image.attached? %>
+        <%= cl_image_tag(@sponsor_student.secondary_image.key, width: 600, crop: :scale, type: :upload) %>
+      <% elsif @sponsor_student.main_image.attached? %>
+        <%= cl_image_tag(@sponsor_student.main_image.key, width: 600, crop: :scale, type: :upload) %>
+      <% end %>
+    <% else %>
+     <% if @sponsor_student.secondary_image.attached? %>
+        <%= image_tag(@sponsor_student.secondary_image, width: 600) %>
+      <% elsif @sponsor_student.main_image.attached? %>
+        <%= image_tag(@sponsor_student.main_image, width: 600) %>
+      <% end %>
+    <% end %>
+  </div>
+    <%= simple_format(@sponsor_student.description) %>
+
+   <div class="tags">
+    <p class="tag">Donate ID: <span class="unique_id"><%= @sponsor_student.unique_identifier %></span></p>
+    <p class="tag">Age: <span><%= @sponsor_student.age %> years old</span></p>
+    <p class="tag">Grade: <span><%= @sponsor_student.grade %></span></p>
+  </div>
+  <div class="tags">
+    <p class="tag">Favorite color: <span><%= @sponsor_student.fav_color %></span></p>
+    <p class="tag">Favorite food: <span><%= @sponsor_student.fav_food %></span></p>
+    <p class="tag">Hobbies: <span><%= @sponsor_student.hobbies %></span></p>
+  </div>
+  <p class="sponsored_label">
+    Sponsored Status: <span class="sponsored_st"><%= @sponsor_student.sponsored_status&.humanize %></span>
+  </p>
+  <% if @sponsor_student.sponsored_status == 'unsponsored' %>
+    <div class="link_to_donate">
+      <%= link_to 'How to donate', sponsor_individual_student_path(@sponsor_student) %>
+    </div>
+  <% end %>
+
+
+  <% if Rails.env.development? %>
+    <%= button_to 'Delete', sponsor_student_path(@sponsor_student), method: :delete %>
+    <%= link_to 'Edit', edit_sponsor_student_path(@sponsor_student) %>
+  <% end %>
+</div>
+
