@@ -6,12 +6,11 @@ class Student < ApplicationRecord
 
   has_one_attached :secondary_image, dependent: :destroy
 
-  has_many :student_updates, foreign_key: :student_id
-
+  has_many :student_updates, dependent: :destroy
 
   validates :name, :description, :age, presence: true
 
-  enum status: { sponsored: 'sponsored', unsponsored: 'unsponsored' }
+  enum :status, { sponsored: 'sponsored', unsponsored: 'unsponsored' }
 
   before_save :generate_unique_identifier
 
