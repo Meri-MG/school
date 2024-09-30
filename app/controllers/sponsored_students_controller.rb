@@ -2,7 +2,7 @@
 
 class SponsoredStudentsController < ApplicationController
   def index
-    @students = Student.where(status: 'sponsored').order(created_at: :asc)
-    @pagy, @students = pagy(@students)
+    @sponsored_students = SponsorStudent.where(sponsored_status: 'sponsored').order(created_at: :asc)
+    @pagy, @sponsored_students = pagy(@sponsored_students)
   end
 end

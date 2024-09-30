@@ -11,7 +11,7 @@ class StudentUpdateTest < ActiveSupport::TestCase
   test "downcase season" do
     student_update = StudentUpdate.new(title: 'Mariam gets award', season: 'Fall',
                                           description: 'Mariam won spelling bee competition',
-                                          student: students(:asmaa))
+                                          sponsor_student: sponsor_students(:asmaa))
     assert_not_equal 'fall', student_update.season
 
     student_update.save

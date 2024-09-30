@@ -5,7 +5,7 @@
 # below each fixture, per the syntax in the comments below
 #
 fall_update:
-  student: asmaa
+  sponsor_student: asmaa
   season: 'fall'
   title: 'Asmma won an award'
   description: 'Asmaa won a spelling bee competition'

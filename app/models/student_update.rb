@@ -6,7 +6,7 @@ class StudentUpdate < ApplicationRecord
 
   has_one_attached :secondary_image, dependent: :destroy
 
-  belongs_to :student
+  belongs_to :sponsor_student
 
   validates :season, :title, :description, presence: true
 
