@@ -1,7 +1,9 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class SponsoredStudentsControllerTest < ActionDispatch::IntegrationTest
-  test "#index" do
+  test '#index' do
     get sponsored_students_path
 
     assert_response :success

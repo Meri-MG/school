@@ -1,0 +1,100 @@
+require:
+  - rubocop-rails
+  - rubocop
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - db/schema.rb
+    - node_modules/**/*
+    - tmp/**/*
+    - local/**/*
+    - vendor/**/*
+    - storage/**/*
+    - bin/**
+
+Layout/LineLength:
+  Max: 120
+  Exclude:
+    - config/**/*
+    - db/**
+
+Layout/LineEndStringConcatenationIndentation:
+  Enabled: false
+
+Layout/FirstHashElementIndentation:
+  Enabled: false
+
+Naming/VariableNumber:
+  Enabled: false
+
+Style/HashSyntax:
+  Enabled: false
+
+Style/FetchEnvVar:
+  Enabled: false
+
+Style/OpenStructUse:
+  Enabled: false
+
+Style/ExplicitBlockArgument:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Rails/I18nLocaleTexts:
+  Enabled: false
+
+Style/Documentation:
+  Exclude:
+    - db/**/*
+    - app/controllers/**/*
+    - test/**/*
+    - app/helpers/**/*
+    - app/mailers/*
+    - app/models/application_record.rb
+    - config/application.rb
+
+Metrics/MethodLength:
+  Exclude:
+    - db/migrate/*
+
+Metrics/BlockLength:
+  Exclude:
+    - db/migrate/*
+    - config/environments/*
+    - config/routes.rb
+    - lib/tasks/*.rake
+
+Metrics/AbcSize:
+  Exclude:
+    - db/migrate/*
+
+Metrics/ClassLength:
+  Exclude:
+    - db/migrate/*
+    - test/controllers/**/*
+    - test/helpers/**/*
+    - test/mailers/**/*
+    - test/models/**/*
+    - test/system/**/*
+
+Rails/BulkChangeTable:
+  Exclude:
+    - db/migrate/*
+
+Rails/ThreeStateBooleanColumn:
+  Enabled: false
+
+Rails/SkipsModelValidations:
+  Enabled: true
+  Exclude:
+    - test/**/**/*
+
+Rails/UnknownEnv:
+  Environments:
+    - development
+    - test
+    - staging
+    - production

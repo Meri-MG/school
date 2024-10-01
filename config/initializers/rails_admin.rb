@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RailsAdmin.config do |config|
   config.asset_source = :sprockets
 
@@ -7,7 +9,6 @@ RailsAdmin.config do |config|
   config.authenticate_with do
     warden.authenticate! scope: :user
     redirect_to main_app.root_path unless current_user.admin?
-
   end
   config.current_user_method(&:current_user)
 
@@ -26,10 +27,7 @@ RailsAdmin.config do |config|
   ## To disable Gravatar integration in Navigation Bar set to false
   # config.show_gravatar = true
 
-
-  config.model 'SponsorStudent' do
-
-
+  config.model 'Student' do
     exclude_fields :unique_identifier
   end
 
