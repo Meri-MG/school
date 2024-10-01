@@ -67,7 +67,7 @@ class SchoolInventoriesControllerTest < ActionDispatch::IntegrationTest
       name: 'Chair',
       description: 'Table chairs for classroom',
       quantity: 12,
-      sponsored: 'unsponsored'
+      sponsored: true
     }
   end
 end
