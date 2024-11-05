@@ -22,10 +22,12 @@ footer {
       font-weight: $base-font-weight;
       font-size: 1rem;
       padding: 3rem 0 1rem 0;
+      text-align: center;
     }
 
     .social_links {
       display: flex;
+      justify-content: space-around;
     }
 
     li {
