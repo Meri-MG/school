@@ -14,15 +14,6 @@ header {
       li {
         font-size: 1.2rem;
 
-        .social_icons {
-          width: 25px;
-          height: 25px;
-          fill: $primary-color;
-          &:hover {
-            fill: $secondary-color;
-          }
-        }
-
         .donate_button {
           padding: .5rem .75rem;
           border: 2px solid $primary-color;

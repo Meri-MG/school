@@ -22,12 +22,21 @@
     </div>
     <div class="follow_social_links">
       <h2 class="contacts_title">Follow us</h2>
-        <ul>
+        <ul class="social_links">
           <li>
-              <a href="https://www.instagram.com/adventistlearningcenter/" target="_blank" rel="noopener">Instagram</a>
+            <%= link_to "https://www.instagram.com/adventistlearningcenter/", target: "_blank", rel: "noopener" do %>
+              <%= image_tag("instagram.svg", class: "social_icons", alt: "Instagram") %>
+            <% end %>
           </li>
           <li>
-              <a href="https://www.facebook.com/adventistlearningcenter" target="_blank" rel="noopener">Facebook</a>
+            <%= link_to "https://www.facebook.com/adventistlearningcenter", target: "_blank", rel: "noopener" do %>
+              <%= image_tag("facebook.svg", class: "social_icons", alt: "Facebook") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "https://www.youtube.com/@adventistlearningcenter2643", target: "_blank", rel: "noopener" do %>
+              <%= image_tag("youtube.svg", class: "social_icons", alt: "YouTube") %>
+            <% end %>
           </li>
         </ul>
     </div>
