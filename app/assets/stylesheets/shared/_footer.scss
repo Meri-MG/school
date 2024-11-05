@@ -24,9 +24,23 @@ footer {
       padding: 3rem 0 1rem 0;
     }
 
+    .social_links {
+      display: flex;
+    }
+
     li {
       color: $brown-color;
       font-weight: $base-font-weight;
+
+      .social_icons {
+        width: 25px;
+        height: 25px;
+        fill: $primary-color;
+
+        &:hover {
+          fill: $secondary-color;
+        }
+      }
 
       p {
         text-decoration: none;
