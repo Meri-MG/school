@@ -11,10 +11,9 @@
   },
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets",
-    "build:css": "node-sass app/assets/stylesheets/application.scss public/assets/application.css"
+    "build:css": "sass app/assets/stylesheets/application.scss public/assets/application.css"
   },
   "devDependencies": {
-    "node-sass": "^9.0.0",
-    "sass": "^1.65.1"
+    "sass": "^1.92.1"
   }
 }
