@@ -43,7 +43,7 @@ class StudentsControllerTest < ActionDispatch::IntegrationTest
                                                description: 'Mariam wants to become a science teacher.' } }
     end
 
-    assert_response :unprocessable_entity
+    assert_response :unprocessable_content
   end
 
   test '#update' do

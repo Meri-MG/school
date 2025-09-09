@@ -25,7 +25,7 @@ class StudentsController < ApplicationController
       redirect_to @student, notice: 'Student was successfully created.'
     else
       flash.now[:error] = 'Could not save client'
-      render :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_content
     end
   end
 
