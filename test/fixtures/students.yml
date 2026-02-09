@@ -1,4 +1,3 @@
-
 asmaa:
   name: Asmaa
   age: 12
@@ -20,6 +19,3 @@ hadil:
   hobbies: [drawing]
   status: sponsored
   unique_identifier: 594030
-
-# two: {}
-# column: value
