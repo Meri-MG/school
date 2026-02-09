@@ -1,0 +1,70 @@
+<div class="group relative rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 hover:-translate-y-1 bg-gray-100">
+
+  <!-- IMAGE -->
+  <div class="relative h-[420px] w-full">
+
+    <% if student.main_image.attached? %>
+      <% if Rails.env.production? %>
+        <%= cl_image_tag student.main_image.key,
+          class: "h-full w-full object-cover group-hover:scale-105 transition duration-500" %>
+      <% else %>
+        <%= image_tag student.main_image,
+          class: "h-full w-full object-cover group-hover:scale-105 transition duration-500" %>
+      <% end %>
+    <% end %>
+
+    <!-- GRADIENT OVERLAY -->
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+
+    <!-- STATUS BADGE -->
+    <div class="absolute top-4 right-4">
+      <span class="
+        text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-md text-white
+        <%= student.status == 'sponsored' ? 'bg-emerald-500/90' : 'bg-rose-500/90' %>
+      ">
+        <%= student.status&.humanize %>
+      </span>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+
+      <!-- NAME -->
+      <h3 class="text-xl font-bold mb-3">
+        <%= student.name %>
+      </h3>
+
+      <!-- INFO CHIPS -->
+      <div class="flex flex-wrap gap-2 mb-4 text-xs">
+
+        <span class="px-2 py-1 rounded-full bg-white/20 backdrop-blur">
+          ID: <%= student.unique_identifier %>
+        </span>
+
+        <span class="px-2 py-1 rounded-full bg-white/20 backdrop-blur">
+          <%= student.age %> yrs
+        </span>
+
+        <span class="px-2 py-1 rounded-full bg-white/20 backdrop-blur">
+          <%= student.grade %>
+        </span>
+
+      </div>
+
+      <!-- ACTION BUTTONS -->
+      <div class="flex gap-2">
+
+        <%= link_to "Story",
+          student_path(student),
+          class: "flex-1 text-center text-sm font-semibold px-4 py-2 rounded-xl bg-white/20 hover:bg-white/30 backdrop-blur transition" %>
+
+        <%= link_to "Sponsor",
+          sponsor_individual_student_path(student),
+          class: "flex-1 text-center text-sm font-semibold px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-600 transition" %>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

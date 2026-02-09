@@ -1,22 +1,73 @@
+<section class="relative overflow-hidden rounded-3xl">
 
-<%= render 'shared/jumbotron' %>
+  <!-- Background Image -->
+  <div class="absolute inset-0">
+    <%= image_tag "cover_image.jpg",
+      class: "h-full w-full object-cover" %>
 
-<div>
-<h3 class="about_us" id="about">
-    About us
-  </h3>
-      
-  <p class="description">
-    Adventist Learning Center provides quality education to Syrian and Kurdish Refugees living in Beirut, Lebanon.
-    Teachers from around the world come together to create a safe, stable, and loving faith-based environment where refugee
-    kids can learn academics, character growth, and more about God. A full scale of academics for students in 1st to 8th grade
-    is provided to approximately 115 students each year. <br />
-    <br />
-    Adventist Learning Center is a project of the Seventh-day Adventist Church
-    and was started through their support. However, it is only through the generosity of private individuals around the world that it is
-    able to remain open each year. For refugees living below the poverty level, the ability to pay for education is impossible.  <br />
-    <br />
-    Join us in helping keep the door open for these precious children who have no one else to fight for them. Your generosity will
-    give them an education now that will help them rebuild their lives and pursue productive meaningful futures.
-  </p>
-</div>
+    <!-- Gradient Overlay (modern, soft, not dark box) -->
+    <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
+
+    <div class="max-w-2xl">
+
+      <!-- Tag / Eyebrow -->
+      <p class="text-sm font-semibold tracking-wide text-emerald-300 uppercase">
+        Adventist Learning Center
+      </p>
+
+      <!-- Main Heading -->
+      <h1 class="mt-4 text-4xl font-bold tracking-tight text-white sm:text-6xl">
+        Working toward a brighter future
+      </h1>
+
+      <!-- Supporting Text -->
+      <p class="mt-6 text-lg leading-8 text-gray-200">
+        Providing education, stability, and hope for refugee children through
+        faith, community, and global support.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="mt-10 flex flex-wrap gap-4">
+
+        <%= link_to students_path,
+          class: "inline-flex items-center justify-center rounded-2xl bg-emerald-600 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-emerald-900/30 transition hover:bg-emerald-500" do %>
+          Sponsor a student
+        <% end %>
+
+        <a href="#about"
+          class="inline-flex items-center justify-center rounded-2xl bg-white/10 backdrop-blur px-8 py-4 text-base font-semibold text-white ring-1 ring-white/30 transition hover:bg-white/20">
+          Learn more
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<section id="about" class="mx-auto max-w-4xl px-6 py-20">
+
+  <div class="text-center">
+    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+      About Us
+    </h2>
+
+    <p class="mt-6 text-lg leading-8 text-gray-600">
+      Adventist Learning Center provides quality education to Syrian and Kurdish
+      refugees living in Beirut, Lebanon. Teachers from around the world create a
+      safe and loving environment where children grow academically and spiritually.
+    </p>
+
+    <p class="mt-6 text-lg leading-8 text-gray-600">
+      Through the generosity of supporters worldwide, children who otherwise could
+      never afford education gain access to learning, stability, and opportunity.
+    </p>
+
+  </div>
+
+</section>
