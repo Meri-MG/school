@@ -3,12 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["menu", "bar1", "bar2", "bar3"]
 
-  connect() {
-    console.log("MenuToggleController connected")
-  }
-
   toggleMenu() {
-    console.log("Toggling menu")
     this.menuTarget.classList.toggle("hidden")
 
     // Animate hamburger to X

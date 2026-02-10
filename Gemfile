@@ -82,6 +82,5 @@ gem 'cloudinary'
 gem 'devise'
 gem 'pagy', '~> 6.0'
 gem 'rails_admin', '~> 3.0'
-gem 'sass-rails', '~> 6.0'
 
 gem "tailwindcss-rails", "~> 4.4"

@@ -287,8 +287,6 @@ GEM
     ruby-vips (2.1.4)
       ffi (~> 1.12)
     rubyzip (2.3.2)
-    sass-rails (6.0.0)
-      sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -318,7 +316,7 @@ GEM
     tailwindcss-ruby (4.1.18-x86_64-darwin)
     tailwindcss-ruby (4.1.18-x86_64-linux-gnu)
     thor (1.4.0)
-    tilt (2.2.0)
+    tilt (2.7.0)
     timeout (0.4.3)
     turbo-rails (2.0.7)
       actionpack (>= 6.0.0)
@@ -375,7 +373,6 @@ DEPENDENCIES
   redis (~> 4.0)
   rubocop
   rubocop-rails
-  sass-rails (~> 6.0)
   sassc-rails
   selenium-webdriver
   sprockets-rails
