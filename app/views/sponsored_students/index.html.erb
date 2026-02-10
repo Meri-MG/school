@@ -16,15 +16,11 @@
 
 <% if @pagy.pages > 1 %>
   <div class="flex justify-center mt-12">
-
-    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 px-4 py-3">
-
-      <div class="pagy-tailwind">
+    <div class="mb-6 bg-white/80 backdrop-blur-sm rounded-3xl shadow-md border border-emerald-100/50 px-6 py-4">
+      <div>
         <%== pagy_nav(@pagy) %>
       </div>
-
     </div>
-
   </div>
 <% end %>
 
