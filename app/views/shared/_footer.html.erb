@@ -1,50 +1,68 @@
-<div id="contact-details">
-  <hr />
-  <div class="contacts_wrapper">
-    <div class="logo-wrapper">
-      <%= link_to root_path, class: "" do %>
-        <%= image_tag 'logo.jpg', class: 'alc_logo', alt: 'alc-logo' %>
-      <% end %>
-    </div>
-    <div class="contact_details">
-      <h2 class="contacts_title">Contact details</h2>
-      <ul>
-        <li>
-          <p>Beirut, Lebanon</p>
-        </li>
-        <li>
-          <p>+961 1 250 745 </p>
-        </li>
-        <li>
-          <p>adventistlearningcenterbeirut@gmail.com</p>
-        </li>
-      </ul>
-    </div>
-    <div class="follow_social_links">
-      <h2 class="contacts_title">Follow us</h2>
-        <ul class="social_links">
+<footer id="contact-details" class="bg-gradient-to-b from-emerald-900/5 to-transparent border-t border-emerald-100/30 pt-12 pb-8">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 items-start">
+
+      <div class="flex flex-col items-center md:items-start">
+        <%= link_to root_path, class: "inline-block transition duration-300 hover:scale-105 hover:brightness-110" do %>
+          <%= image_tag "alc_logo.png",
+                class: "h-20 md:h-24 w-auto object-contain drop-shadow-lg filter brightness-105 contrast-110",
+                alt: "Adventist Learning Center logo" %>
+        <% end %>
+        <p class="mt-4 text-sm font-semibold tracking-wide text-emerald-600 uppercase text-center md:text-left">
+          Adventist Learning Center Beirut
+        </p>
+      </div>
+
+      <div class="text-center md:text-left">
+        <h2 class="text-xl font-semibold text-emerald-800 mb-5">Contact Details</h2>
+        <ul class="space-y-4 text-gray-700">
+          <li class="flex items-center justify-center md:justify-start gap-3">
+            <span class="text-emerald-600">📍</span>
+            <p>Beirut, Lebanon</p>
+          </li>
+          <li class="flex items-center justify-center md:justify-start gap-3">
+            <span class="text-emerald-600">📞</span>
+            <p>+961 1 250 745</p>
+          </li>
+          <li class="flex items-center justify-center md:justify-start gap-3">
+            <span class="text-emerald-600">✉️</span>
+            <a href="mailto:adventistlearningcenterbeirut@gmail.com" class="hover:text-emerald-700 transition">
+              adventistlearningcenterbeirut@gmail.com
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="text-center md:text-left">
+        <h2 class="text-xl font-semibold text-emerald-800 mb-5">Follow Us</h2>
+        <ul class="flex justify-center md:justify-start gap-6">
           <li>
-            <%= link_to "https://www.instagram.com/adventistlearningcenter/", target: "_blank", rel: "noopener" do %>
-              <%= image_tag("instagram.svg", class: "social_icons", alt: "Instagram") %>
+            <%= link_to "https://www.instagram.com/adventistlearningcenter/", target: "_blank", rel: "noopener noreferrer", class: "block p-3 rounded-full bg-emerald-50 hover:bg-emerald-100 transition duration-300 shadow-sm hover:shadow" do %>
+              <%= image_tag "instagram.svg", class: "w-8 h-8 text-emerald-700", alt: "Instagram" %>
             <% end %>
           </li>
           <li>
-            <%= link_to "https://www.facebook.com/adventistlearningcenter", target: "_blank", rel: "noopener" do %>
-              <%= image_tag("facebook.svg", class: "social_icons", alt: "Facebook") %>
+            <%= link_to "https://www.facebook.com/adventistlearningcenter", target: "_blank", rel: "noopener noreferrer", class: "block p-3 rounded-full bg-emerald-50 hover:bg-emerald-100 transition duration-300 shadow-sm hover:shadow" do %>
+              <%= image_tag "facebook.svg", class: "w-8 h-8 text-emerald-700", alt: "Facebook" %>
             <% end %>
           </li>
           <li>
-            <%= link_to "https://www.youtube.com/@adventistlearningcenter2643", target: "_blank", rel: "noopener" do %>
-              <%= image_tag("youtube.svg", class: "social_icons", alt: "YouTube") %>
+            <%= link_to "https://www.youtube.com/@adventistlearningcenter2643", target: "_blank", rel: "noopener noreferrer", class: "block p-3 rounded-full bg-emerald-50 hover:bg-emerald-100 transition duration-300 shadow-sm hover:shadow" do %>
+              <%= image_tag "youtube.svg", class: "w-8 h-8 text-emerald-700", alt: "YouTube" %>
             <% end %>
           </li>
         </ul>
+      </div>
+
     </div>
+
+    <div class="mt-12 pt-8 border-t border-gray-200 text-center text-sm text-gray-600">
+      © <%= Time.zone.now.year %> 
+      <a href="https://www.linkedin.com/in/meri-gogichashvili/" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-700 transition">
+        MeriMG
+      </a>. All Rights Reserved.
+    </div>
+
   </div>
-  <hr />
-  <div class="rights">
-    <span>© <%= Time.zone.now.year %>
-      <a href="https://www.linkedin.com/in/meri-gogichashvili/" target="_blank" rel="noopener">MeriMG</a>. All Rights Reserved.
-    </span>
-  </div>
-</div>
+</footer>

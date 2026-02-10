@@ -1,36 +1,29 @@
-<section class="relative overflow-hidden rounded-3xl">
+<section class="relative overflow-hidden">
 
-  <!-- Background Image -->
   <div class="absolute inset-0">
     <%= image_tag "cover_image.jpg",
       class: "h-full w-full object-cover" %>
 
-    <!-- Gradient Overlay (modern, soft, not dark box) -->
     <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
   </div>
 
-  <!-- Content -->
   <div class="relative mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
 
     <div class="max-w-2xl">
 
-      <!-- Tag / Eyebrow -->
       <p class="text-sm font-semibold tracking-wide text-emerald-300 uppercase">
         Adventist Learning Center
       </p>
 
-      <!-- Main Heading -->
       <h1 class="mt-4 text-4xl font-bold tracking-tight text-white sm:text-6xl">
         Working toward a brighter future
       </h1>
 
-      <!-- Supporting Text -->
       <p class="mt-6 text-lg leading-8 text-gray-200">
         Providing education, stability, and hope for refugee children through
         faith, community, and global support.
       </p>
 
-      <!-- CTA Buttons -->
       <div class="mt-10 flex flex-wrap gap-4">
 
         <%= link_to students_path,

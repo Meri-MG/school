@@ -19,3 +19,279 @@ hadil:
   hobbies: [drawing]
   status: sponsored
   unique_identifier: 594030
+
+student_3:
+  name: Omar
+  age: 10
+  grade: 5th grade
+  description: Loves football and dreams of becoming a professional player.
+  fav_food: burgers
+  fav_color: blue
+  hobbies: [football]
+  status: unsponsored
+  unique_identifier: 594031
+
+student_4:
+  name: Lina
+  age: 14
+  grade: 9th grade
+  description: Very passionate about science and experiments.
+  fav_food: pizza
+  fav_color: purple
+  hobbies: science, reading
+  status: sponsored
+  unique_identifier: 594032
+
+student_5:
+  name: Yusuf
+  age: 11
+  grade: 6th grade
+  description: Enjoys mathematics and solving puzzles.
+  fav_food: rice
+  fav_color: green
+  hobbies: [puzzles]
+  status: unsponsored
+  unique_identifier: 594033
+
+student_6:
+  name: Noor
+  age: 13
+  grade: 7th grade
+  description: Loves painting and creative arts.
+  fav_food: pasta
+  fav_color: pink
+  hobbies: [painting]
+  status: sponsored
+  unique_identifier: 594034
+
+student_7:
+  name: Kareem
+  age: 15
+  grade: 10th grade
+  description: Interested in technology and computers.
+  fav_food: shawarma
+  fav_color: black
+  hobbies: [coding]
+  status: unsponsored
+  unique_identifier: 594035
+
+student_8:
+  name: Salma
+  age: 9
+  grade: 4th grade
+  description: Friendly and loves helping classmates.
+  fav_food: soup
+  fav_color: red
+  hobbies: [reading]
+  status: sponsored
+  unique_identifier: 594036
+
+student_9:
+  name: Ahmed
+  age: 16
+  grade: 11th grade
+  description: Wants to become an engineer.
+  fav_food: steak
+  fav_color: navy
+  hobbies: [robotics]
+  status: unsponsored
+  unique_identifier: 594037
+
+student_10:
+  name: Fatima
+  age: 12
+  grade: 7th grade
+  description: Enjoys storytelling and writing.
+  fav_food: noodles
+  fav_color: orange
+  hobbies: [writing]
+  status: sponsored
+  unique_identifier: 594038
+
+student_11:
+  name: Hassan
+  age: 13
+  grade: 8th grade
+  description: Loves basketball and teamwork.
+  fav_food: chicken
+  fav_color: blue
+  hobbies: [basketball]
+  status: unsponsored
+  unique_identifier: 594039
+
+student_12:
+  name: Mariam
+  age: 10
+  grade: 5th grade
+  description: Enjoys music and singing.
+  fav_food: pancakes
+  fav_color: lilac
+  hobbies: [singing]
+  status: sponsored
+  unique_identifier: 594040
+
+student_13:
+  name: Tarek
+  age: 14
+  grade: 9th grade
+  description: Very curious and loves geography.
+  fav_food: fish
+  fav_color: teal
+  hobbies: [maps]
+  status: unsponsored
+  unique_identifier: 594041
+
+student_14:
+  name: Aya
+  age: 11
+  grade: 6th grade
+  description: Dreams of becoming a doctor.
+  fav_food: salad
+  fav_color: mint
+  hobbies: [biology]
+  status: sponsored
+  unique_identifier: 594042
+
+student_15:
+  name: Bilal
+  age: 15
+  grade: 10th grade
+  description: Interested in cars and mechanics.
+  fav_food: kebab
+  fav_color: gray
+  hobbies: [mechanics]
+  status: unsponsored
+  unique_identifier: 594043
+
+student_16:
+  name: Huda
+  age: 9
+  grade: 4th grade
+  description: Very social and loves group activities.
+  fav_food: fries
+  fav_color: yellow
+  hobbies: [games]
+  status: sponsored
+  unique_identifier: 594044
+
+student_17:
+  name: Samir
+  age: 13
+  grade: 8th grade
+  description: Loves history and documentaries.
+  fav_food: soup
+  fav_color: brown
+  hobbies: [history]
+  status: unsponsored
+  unique_identifier: 594045
+
+student_18:
+  name: Dalia
+  age: 12
+  grade: 7th grade
+  description: Enjoys dancing and performing arts.
+  fav_food: sushi
+  fav_color: coral
+  hobbies: [dance]
+  status: sponsored
+  unique_identifier: 594046
+
+student_19:
+  name: Ziad
+  age: 14
+  grade: 9th grade
+  description: Passionate about astronomy.
+  fav_food: pizza
+  fav_color: dark blue
+  hobbies: [astronomy]
+  status: unsponsored
+  unique_identifier: 594047
+
+student_20:
+  name: Rana
+  age: 11
+  grade: 6th grade
+  description: Loves animals and wants to be a vet.
+  fav_food: sandwiches
+  fav_color: green
+  hobbies: [animals]
+  status: sponsored
+  unique_identifier: 594048
+
+student_21:
+  name: Majed
+  age: 16
+  grade: 11th grade
+  description: Enjoys debate and public speaking.
+  fav_food: rice
+  fav_color: maroon
+  hobbies: [debate]
+  status: unsponsored
+  unique_identifier: 594049
+
+student_22:
+  name: Leen
+  age: 10
+  grade: 5th grade
+  description: Loves drawing cartoons.
+  fav_food: waffles
+  fav_color: pink
+  hobbies: [drawing]
+  status: sponsored
+  unique_identifier: 594050
+
+student_23:
+  name: Rana
+  age: 11
+  grade: 6th grade
+  description: Loves animals and wants to be a vet.
+  fav_food: sandwiches
+  fav_color: green
+  hobbies: [animals]
+  status: sponsored
+  unique_identifier: 594048
+
+student_24:
+  name: Majed
+  age: 16
+  grade: 11th grade
+  description: Enjoys debate and public speaking.
+  fav_food: rice
+  fav_color: maroon
+  hobbies: [debate]
+  status: unsponsored
+  unique_identifier: 594049
+
+student_25:
+  name: Leen
+  age: 10
+  grade: 5th grade
+  description: Loves drawing cartoons.
+  fav_food: waffles
+  fav_color: pink
+  hobbies: [drawing]
+  status: sponsored
+  unique_identifier: 594050
+
+student_26:
+  name: Majed
+  age: 16
+  grade: 11th grade
+  description: Enjoys debate and public speaking.
+  fav_food: rice
+  fav_color: maroon
+  hobbies: [debate]
+  status: unsponsored
+  unique_identifier: 594049
+
+student_27:
+  name: Leen
+  age: 10
+  grade: 5th grade
+  description: Loves drawing cartoons.
+  fav_food: waffles
+  fav_color: pink
+  hobbies: [drawing]
+  status: sponsored
+  unique_identifier: 594050
+

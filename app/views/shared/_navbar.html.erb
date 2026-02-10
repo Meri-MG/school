@@ -1,50 +1,69 @@
-<nav data-controller="menu-toggle">
-    <div class="logo-wrapper">
-      <%= link_to root_path, class: "" do %>
-        <%= image_tag 'logo.jpg', class: 'alc_logo', alt: 'alc-logo' %>
-      <% end %>
-    </div>
-    <ul class="mobile_menu" data-action="click->menu-toggle#toggleMenu"  data-menu-toggle-target="menu">
-      <li>
-        <%= link_to 'About', root_path(anchor: 'about'), class: 'menu__item' %>
-      </li>
-      <li>
-        <%= link_to 'Unsponsored students', students_path, class: 'menu__item' %>
-      </li>
-       <li>
-        <%= link_to 'Sponsored students', sponsored_students_path, class: 'menu__item' %>
-      </li>
-      <li>
-        <%= link_to 'How to donate', how_to_donate_path, class: 'menu__item' %>
-      </li>
-      <li>
-        <%= link_to 'Contact', root_path(anchor: 'contact-details'), class: 'menu__item' %>
-      </li>
-      </ul>
-      <div class="hamburgers" data-action="click->menu-toggle#toggleMenu">
-        <span class="bar1" data-menu-toggle-target="hamburger"></span>
-        <span class="bar2" data-menu-toggle-target="hamburger"></span>
-        <span class="bar3" data-menu-toggle-target="hamburger"></span>
+<nav
+  data-controller="menu-toggle"
+  class="sticky top-0 z-50 bg-transparent backdrop-blur-md border-b border-white/20 transition-all duration-300"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+
+      <div class="flex-shrink-0">
+        <%= link_to root_path, class: "flex items-center gap-3 transition duration-300 hover:scale-105 hover:brightness-110" do %>
+          <%= image_tag "alc_logo.png",
+                class: "h-12 md:h-14 w-12 md:w-14 object-cover rounded-full drop-shadow-lg ring-1 ring-emerald-200/60 ring-offset-1 flex-shrink-0",
+                alt: "Adventist Learning Center logo" %>
+
+          <div class="flex flex-col">
+            <span class="text-lg md:text-xl font-bold text-emerald-800 tracking-tight leading-none">
+              Adventist Learning Center
+            </span>
+            <span class="text-xs md:text-sm text-emerald-700/80 font-medium leading-tight">
+              Beirut
+            </span>
+          </div>
+        <% end %>
       </div>
-    
-    <ul class="menu desktop" >
-      <li>
-        <%= link_to 'About', root_path(anchor: 'about'), class: 'menu__item' %>
-      </li>
-      <li>
-        <%= link_to 'Unsponsored students', students_path, class: 'menu__item' %>
-      </li>
-      <li>
-        <%= link_to 'Sponsored students', sponsored_students_path, class: 'menu__item' %>
-      </li>
-      <li>
-        <%= link_to 'How to donate', how_to_donate_path, class: 'menu__item' %>
-      </li>
-      <li>
-        <%= link_to 'Contact', root_path(anchor: 'contact-details'), class: 'menu__item' %>
-      </li>
-      <li>
-        <%= link_to 'Donate', how_to_donate_path, class: "donate_button" %>
-      </li>
-    </ul>
+
+      <div class="hidden md:flex items-center space-x-1 lg:space-x-3">
+        <% link_classes = "px-4 py-2.5 font-medium text-emerald-600/90 rounded-xl hover:bg-white/10 hover:shadow-sm transition duration-300" %>
+
+        <%= link_to "About", root_path(anchor: "about"), class: link_classes %>
+        <%= link_to "Unsponsored", students_path, class: link_classes %>
+        <%= link_to "Sponsored", sponsored_students_path, class: link_classes %>
+        <%= link_to "Donate Info", how_to_donate_path, class: link_classes %>
+        <%= link_to "Contact", root_path(anchor: "contact-details"), class: link_classes %>
+
+        <%= link_to "Sponsor a Student", students_path, 
+              class: "ml-6 inline-flex items-center px-7 py-3.5 rounded-2xl text-white bg-emerald-600/90  hover:bg-emerald-600 text-white font-semibold shadow-md hover:shadow-lg hover:scale-105 transition duration-300 backdrop-blur-sm" %>
+      </div>
+
+      <button
+        class="md:hidden inline-flex items-center justify-center p-2 rounded-xl text-white hover:bg-white/10 focus:outline-none transition duration-200"
+        data-action="click->menu-toggle#toggleMenu"
+        aria-label="Toggle menu"
+      >
+        <div class="space-y-1.5">
+          <span class="block w-7 h-0.5 bg-current rounded-full transition-all duration-300" data-menu-toggle-target="bar1"></span>
+          <span class="block w-7 h-0.5 bg-current rounded-full transition-all duration-300" data-menu-toggle-target="bar2"></span>
+          <span class="block w-7 h-0.5 bg-current rounded-full transition-all duration-300" data-menu-toggle-target="bar3"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="md:hidden hidden bg-black/60 backdrop-blur-xl border-t border-white/10 shadow-2xl"
+    data-menu-toggle-target="menu"
+  >
+    <div class="px-4 pt-2 pb-6 space-y-3">
+      <% mobile_link = "block px-5 py-4 text-white font-medium rounded-xl hover:bg-white/10 transition duration-300" %>
+
+      <%= link_to "About", root_path(anchor: "about"), class: mobile_link %>
+      <%= link_to "Students", students_path, class: mobile_link %>
+      <%= link_to "Sponsored", sponsored_students_path, class: mobile_link %>
+      <%= link_to "Donate Info", how_to_donate_path, class: mobile_link %>
+      <%= link_to "Contact", root_path(anchor: "contact-details"), class: mobile_link %>
+
+      <%= link_to "Sponsor a Student", students_path, 
+            class: "mt-6 block text-center px-6 py-4 rounded-2xl bg-emerald-600 text-white font-semibold shadow-md hover:bg-emerald-700 transition duration-300" %>
+    </div>
+  </div>
 </nav>

@@ -1,6 +1,5 @@
 <div class="group relative rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 hover:-translate-y-1 bg-gray-100">
 
-  <!-- IMAGE -->
   <div class="relative h-[420px] w-full">
 
     <% if student.main_image.attached? %>
@@ -13,10 +12,8 @@
       <% end %>
     <% end %>
 
-    <!-- GRADIENT OVERLAY -->
     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
 
-    <!-- STATUS BADGE -->
     <div class="absolute top-4 right-4">
       <span class="
         text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-md text-white
@@ -26,15 +23,12 @@
       </span>
     </div>
 
-    <!-- CONTENT -->
     <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
 
-      <!-- NAME -->
       <h3 class="text-xl font-bold mb-3">
         <%= student.name %>
       </h3>
 
-      <!-- INFO CHIPS -->
       <div class="flex flex-wrap gap-2 mb-4 text-xs">
 
         <span class="px-2 py-1 rounded-full bg-white/20 backdrop-blur">
@@ -51,7 +45,6 @@
 
       </div>
 
-      <!-- ACTION BUTTONS -->
       <div class="flex gap-2">
 
         <%= link_to "Story",
