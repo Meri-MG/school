@@ -18,7 +18,7 @@ gem 'pg', '~> 1.1'
 gem 'puma', '< 7'
 
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
-gem 'jsbundling-rails'
+# gem 'jsbundling-rails'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem 'turbo-rails'
@@ -27,7 +27,6 @@ gem 'turbo-rails'
 gem 'stimulus-rails'
 
 # Bundle and process CSS [https://github.com/rails/cssbundling-rails]
-gem 'cssbundling-rails'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
@@ -85,4 +84,4 @@ gem 'pagy', '~> 6.0'
 gem 'rails_admin', '~> 3.0'
 gem 'sass-rails', '~> 6.0'
 
-gem 'tailwindcss-rails', '~> 4.4'
+gem "tailwindcss-rails", "~> 4.4"
