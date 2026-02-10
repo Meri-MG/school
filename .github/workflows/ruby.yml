@@ -32,6 +32,15 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+      - name: Clear bundler cache
+        run: |
+          rm -rf vendor/bundle
+          bundle install
+
+      - name: Clear asset cache
+        run: |
+          rm -rf public/assets
+          rm -rf tmp/cache
 
       - name: Setup Database
         run: |
