@@ -18,7 +18,7 @@ gem 'pg', '~> 1.1'
 gem 'puma', '< 7'
 
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
-gem 'jsbundling-rails'
+# gem 'jsbundling-rails'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem 'turbo-rails'
@@ -76,6 +76,7 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem "minitest", "~> 5.0"
 end
 
 gem 'cloudinary'
