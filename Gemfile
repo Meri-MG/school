@@ -83,4 +83,5 @@ gem 'devise'
 gem 'pagy', '~> 6.0'
 gem 'rails_admin', '~> 3.0'
 
-gem "tailwindcss-rails", "~> 4.4"
+gem 'tailwindcss-rails', '~> 4.4'
+gem 'tailwindcss-ruby', '~> 4.1', '>= 4.1.18'

@@ -3,7 +3,6 @@
 @source "../../helpers/**/*.rb";
 @source "../../javascript/**/*.js";
 
-
 /* Pagy pagination styles */
 .pagy-nav.pagination {
   display: flex;

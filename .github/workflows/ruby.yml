@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       postgres:
-        image: postgres:11
+        image: postgres:16
         ports:
           - 5432:5432
         env:
@@ -31,16 +31,7 @@ jobs:
       - name: Set up Ruby and gems
         uses: ruby/setup-ruby@v1
         with:
-          bundler-cache: true
-      - name: Clear bundler cache
-        run: |
-          rm -rf vendor/bundle
-          bundle install
-
-      - name: Clear asset cache
-        run: |
-          rm -rf public/assets
-          rm -rf tmp/cache
+          bundler-cache: truets
 
       - name: Setup Database
         run: |
