@@ -18,7 +18,7 @@ gem 'pg', '~> 1.1'
 gem 'puma', '< 7'
 
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
-# gem 'jsbundling-rails'
+gem 'jsbundling-rails'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem 'turbo-rails'
@@ -85,3 +85,5 @@ gem 'rails_admin', '~> 3.0'
 
 gem 'tailwindcss-rails', '~> 4.4'
 gem 'tailwindcss-ruby', '~> 4.1', '>= 4.1.18'
+
+gem "importmap-rails", "~> 2.2"
