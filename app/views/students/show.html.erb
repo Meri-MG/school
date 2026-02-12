@@ -3,25 +3,24 @@
   <div class="relative w-full h-[420px] md:h-[520px] overflow-hidden">
 
     <% if @student.secondary_image.attached? %>
-      <% if Rails.env.production? %>
-        <%= cl_image_tag @student.secondary_image.key,
-          class: "w-full h-full object-cover" %>
-      <% else %>
-        <%= image_tag @student.secondary_image,
-          class: "w-full h-full object-cover" %>
-      <% end %>
-
+      <% image = @student.secondary_image %>
     <% elsif @student.main_image.attached? %>
-
-      <% if Rails.env.production? %>
-        <%= cl_image_tag @student.main_image.key,
-          class: "w-full h-full object-cover" %>
-      <% else %>
-        <%= image_tag @student.main_image,
-          class: "w-full h-full object-cover" %>
-      <% end %>
-
+      <% image = @student.main_image %>
     <% end %>
+
+    <% if Rails.env.production? %>
+      <%= cl_image_tag image.key,
+            width: 800,               
+            height: 520,
+            crop: :fill,
+            gravity: :face,
+            class: "w-full h-full object-cover" %>
+    <% else %>
+      <%= image_tag image,
+            class: "w-full h-full object-cover" %>
+    <% end %>
+
+  </div>
 
     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
 
