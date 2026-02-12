@@ -74,9 +74,9 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
+  gem 'minitest', '~> 5.0'
   gem 'selenium-webdriver'
   gem 'webdrivers'
-  gem "minitest", "~> 5.0"
 end
 
 gem 'cloudinary'
@@ -87,4 +87,4 @@ gem 'rails_admin', '~> 3.0'
 gem 'tailwindcss-rails', '~> 4.4'
 gem 'tailwindcss-ruby', '~> 4.1', '>= 4.1.18'
 
-gem "importmap-rails", "~> 2.2"
+gem 'importmap-rails', '~> 2.2'

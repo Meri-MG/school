@@ -51,8 +51,8 @@ class StudentsController < ApplicationController
   private
 
   def student_params
-    params.require(:student)
-          .permit(:name, :description, :age, :grade, :fav_food, :status,
-                  :fav_color, :main_image, :secondary_image, :hobbies)
+    params
+      .expect(student: %i[name description age grade fav_food status
+                          fav_color main_image secondary_image hobbies])
   end
 end
