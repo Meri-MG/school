@@ -6,7 +6,7 @@ Adventist Learning Center provides quality education to Syrian and Kurdish Refug
 
 - Ruby
 - Ruby on Rails
-- SCSS
+- Tailwind
 - PostgreSQL
 
 ## Getting Started

@@ -18,7 +18,7 @@ gem 'pg', '~> 1.1'
 gem 'puma', '< 7'
 
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
-gem 'jsbundling-rails'
+# gem 'jsbundling-rails'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem 'turbo-rails'
@@ -27,7 +27,6 @@ gem 'turbo-rails'
 gem 'stimulus-rails'
 
 # Bundle and process CSS [https://github.com/rails/cssbundling-rails]
-gem 'cssbundling-rails'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
@@ -48,7 +47,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootsnap', require: false
 
 # Use Sass to process CSS
-# gem "sassc-rails"
+gem 'sassc-rails'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem 'image_processing', '~> 1.2'
@@ -75,6 +74,7 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
+  gem 'minitest', '~> 5.0'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
@@ -83,6 +83,8 @@ gem 'cloudinary'
 gem 'devise'
 gem 'pagy', '~> 6.0'
 gem 'rails_admin', '~> 3.0'
-gem 'sassc-rails'
-gem 'sass-rails', '~> 6.0'
-gem "sassc-rails"
+
+gem 'tailwindcss-rails', '~> 4.4'
+gem 'tailwindcss-ruby', '~> 4.1', '>= 4.1.18'
+
+gem 'importmap-rails', '~> 2.2'

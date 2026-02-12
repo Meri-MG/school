@@ -1,34 +1,26 @@
-<div class="content-wrapper">
-  <div class="card-grid">
-      <% if @students.any? %>
-        <% @students.each do |student| %>
-          <div class="card">
-            <div class="card_image">
-              <% if student.main_image.attached? %>
-                <% if Rails.env.production? %>
-                  <%= cl_image_tag(student.main_image.key, crop: :scale, type: :upload) %>
-                <% else %>
-                  <%= image_tag(student.main_image) %>
-                <% end %>
-              <% end %>
-            </div>
-            <div class="card_content">
-              <p class="card_title"><%= student.name %></p>
-              <p><em>Donate ID: </em><span><%= student.unique_identifier %></span></p>
-              <p><em>Age: </em><span><%= student.age %> years old</p></span>
-              <p><em>Grade: </em><span><%= student.grade %></p></span>
-              <p class="unsponsored"><%= student.status&.humanize %></p>
-              <div class="check_story">
-                <%= link_to "Check #{student.name}'s story", student_path(student) %>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-  </div>
-</div>
-<%== pagy_nav(@pagy) %>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
-<% if Rails.env.development? %>
-  <%= link_to 'New student', new_student_path %>
+  <% if @students.any? %>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
+      <% @students.each do |student| %>
+        <%= render "shared/student_card", student: student %>
+      <% end %>
+
+    </div>
+  <% else %>
+    <p class="text-center text-gray-500">No students yet</p>
+  <% end %>
+
+</div>
+
+<% if @pagy.pages > 1 %>
+  <div class="flex justify-center mt-12">
+    <div class="mb-6 bg-white/80 backdrop-blur-sm rounded-3xl shadow-md border border-emerald-100/50 px-6 py-4">
+      <div>
+        <%== pagy_nav(@pagy) %>
+      </div>
+    </div>
+  </div>
 <% end %>
+

@@ -6,12 +6,13 @@
     <%= favicon_link_tag 'alc_logo.ico' %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all', "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
 
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="bg-gradient-to-br from-amber-50 via-emerald-50 to-teal-50">
     <header>
       <%= render 'shared/navbar' %>
     </header>
@@ -23,7 +24,5 @@
     <footer>
       <%= render 'shared/footer' %>
     </footer>
-  <script>
-  </script>
   </body>
 </html>

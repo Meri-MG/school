@@ -1,47 +1,166 @@
+<div class="bg-slate-50 min-h-screen">
 
-<div class="content-wrapper">
-  <div class="show_page">
-    <h1>Meet <%= @student.name.capitalize %></h1>
-    <div class="image_wrapper">
+  <div class="relative w-full h-[420px] md:h-[520px] overflow-hidden">
+
+    <% if @student.secondary_image.attached? %>
       <% if Rails.env.production? %>
-        <% if @student.secondary_image.attached? %>
-          <%= cl_image_tag(@student.secondary_image.key, width: 600, crop: :scale, type: :upload) %>
-        <% elsif @student.main_image.attached? %>
-          <%= cl_image_tag(@student.main_image.key, width: 600, crop: :scale, type: :upload) %>
-        <% end %>
+        <%= cl_image_tag @student.secondary_image.key,
+          class: "w-full h-full object-cover" %>
       <% else %>
-      <% if @student.secondary_image.attached? %>
-          <%= image_tag(@student.secondary_image, width: 600) %>
-        <% elsif @student.main_image.attached? %>
-          <%= image_tag(@student.main_image, width: 600) %>
-        <% end %>
+        <%= image_tag @student.secondary_image,
+          class: "w-full h-full object-cover" %>
       <% end %>
-    </div>
-      <%= simple_format(@student.description) %>
 
-    <div class="tags">
-      <p class="tag">Donate ID: <span class="unique_id"><%= @student.unique_identifier %></span></p>
-      <p class="tag">Age: <span><%= @student.age %> years old</span></p>
-      <p class="tag">Grade: <span><%= @student.grade %></span></p>
-    </div>
-    <div class="tags">
-      <p class="tag">Favorite color: <span><%= @student.fav_color %></span></p>
-      <p class="tag">Favorite food: <span><%= @student.fav_food %></span></p>
-      <p class="tag">Hobbies: <span><%= @student.hobbies %></span></p>
-    </div>
-    <p class="sponsored_label">
-      Sponsored Status: <span class="sponsored_st"><%= @student.status&.humanize %></span>
-    </p>
-    <% if @student.status == 'unsponsored' %>
-      <div class="link_to_donate">
-        <%= link_to 'How to donate', sponsor_individual_student_path(@student) %>
-      </div>
+    <% elsif @student.main_image.attached? %>
+
+      <% if Rails.env.production? %>
+        <%= cl_image_tag @student.main_image.key,
+          class: "w-full h-full object-cover" %>
+      <% else %>
+        <%= image_tag @student.main_image,
+          class: "w-full h-full object-cover" %>
+      <% end %>
+
     <% end %>
+
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
+
+    <div class="absolute bottom-0 left-0 right-0 max-w-7xl mx-auto px-6 pb-10 text-white">
+
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+
+        <div>
+          <h1 class="text-3xl md:text-5xl font-bold mb-3">
+            Meet <%= @student.name.capitalize %>
+          </h1>
+
+          <div class="flex flex-wrap gap-2 text-sm">
+
+            <span class="px-3 py-1 rounded-full bg-white/20 backdrop-blur">
+              ID: <%= @student.unique_identifier %>
+            </span>
+
+            <span class="px-3 py-1 rounded-full bg-white/20 backdrop-blur">
+              <%= @student.age %> years old
+            </span>
+
+            <span class="px-3 py-1 rounded-full bg-white/20 backdrop-blur">
+              <%= @student.grade %>
+            </span>
+
+          </div>
+        </div>
+
+        <div class="flex flex-col items-start md:items-end gap-3">
+
+          <span class="
+            text-sm font-semibold px-4 py-2 rounded-full backdrop-blur text-white
+            <%= @student.status == 'sponsored' ? 'bg-emerald-500/90' : 'bg-rose-500/90' %>
+          ">
+            <%= @student.status&.humanize %>
+          </span>
+
+          <% if @student.status == 'unsponsored' %>
+            <%= link_to "Sponsor #{@student.name}",
+              sponsor_individual_student_path(@student),
+              class: "inline-flex items-center justify-center rounded-xl bg-emerald-500 hover:bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition" %>
+          <% end %>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="max-w-5xl mx-auto px-6 py-12 space-y-10">
+
+    <div class="bg-white rounded-3xl shadow-sm p-8 md:p-10">
+
+      <h2 class="text-2xl font-semibold text-slate-900 mb-6">
+        About <%= @student.name %>
+      </h2>
+
+      <div class="prose prose-slate max-w-none text-lg leading-relaxed">
+        <%= simple_format(@student.description) %>
+      </div>
+
+    </div>
+
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <div class="bg-white rounded-3xl shadow-sm p-6">
+        <h3 class="text-lg font-semibold text-slate-900 mb-4">
+          Personal Details
+        </h3>
+
+        <div class="space-y-3 text-sm">
+
+          <div class="flex justify-between border-b border-slate-100 pb-2">
+            <span class="text-slate-500">Favorite Color</span>
+            <span class="font-semibold text-slate-900"><%= @student.fav_color %></span>
+          </div>
+
+          <div class="flex justify-between border-b border-slate-100 pb-2">
+            <span class="text-slate-500">Favorite Food</span>
+            <span class="font-semibold text-slate-900"><%= @student.fav_food %></span>
+          </div>
+
+          <div class="flex justify-between">
+            <span class="text-slate-500">Hobbies</span>
+            <span class="font-semibold text-slate-900">
+              <%= Array(@student.hobbies).join(", ") %>
+            </span>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-3xl shadow-sm p-6 text-white flex flex-col justify-between">
+
+        <div>
+          <h3 class="text-lg font-semibold mb-3">
+            Change a Life Today
+          </h3>
+
+          <p class="text-white/90 text-sm leading-relaxed">
+            Your sponsorship helps provide education, stability, and hope for children who need it most.
+          </p>
+        </div>
+
+        <% if @student.status == 'unsponsored' %>
+          <%= link_to "Sponsor #{@student.name}",
+            sponsor_individual_student_path(@student),
+            class: "mt-6 inline-flex items-center justify-center rounded-xl bg-white text-emerald-600 hover:bg-white/90 px-5 py-3 text-sm font-semibold transition" %>
+        <% else %>
+          <div class="mt-6 text-sm font-semibold text-white/90">
+            This student is already sponsored 💚
+          </div>
+        <% end %>
+
+      </div>
+
+    </div>
 
 
     <% if Rails.env.development? %>
-      <%= button_to 'Delete', student_path(@student), method: :delete %>
-      <%= link_to 'Edit', edit_student_path(@student) %>
+      <div class="flex gap-3 pt-6 border-t border-slate-200">
+
+        <%= link_to "Edit",
+          edit_student_path(@student),
+          class: "px-4 py-2 rounded-xl border border-slate-300 hover:bg-slate-100 text-sm font-semibold transition" %>
+
+        <%= button_to "Delete",
+          student_path(@student),
+          method: :delete,
+          class: "px-4 py-2 rounded-xl bg-rose-500 hover:bg-rose-600 text-white text-sm font-semibold transition" %>
+
+      </div>
     <% end %>
+
   </div>
+
 </div>
