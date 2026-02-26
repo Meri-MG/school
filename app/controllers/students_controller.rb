@@ -19,12 +19,12 @@ class StudentsController < ApplicationController
   end
 
   def create
-    @student = Student.create(student_params)
+    @student = Student.new(student_params)
 
     if @student.save
       redirect_to @student, notice: 'Student was successfully created.'
     else
-      flash.now[:error] = 'Could not save client'
+      flash.now[:error] = 'Could not save student'
       render :new, status: :unprocessable_content
     end
   end
@@ -32,9 +32,11 @@ class StudentsController < ApplicationController
   def update
     @student = Student.find(params[:id])
 
-    @student.update(student_params)
-
-    redirect_to student_path(@student)
+    if @student.update(student_params)
+      redirect_to student_path(@student)
+    else
+      render :edit, status: :unprocessable_content
+    end
   end
 
   def destroy
@@ -42,6 +44,11 @@ class StudentsController < ApplicationController
     @student.destroy!
 
     redirect_to students_path
+  end
+
+  def sponsored
+    @students = Student.where(status: 'sponsored').order(created_at: :asc)
+    @pagy, @students = pagy(@students)
   end
 
   def sponsor_individual_student

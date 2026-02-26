@@ -12,7 +12,7 @@ class Student < ApplicationRecord
 
   enum :status, { sponsored: 'sponsored', unsponsored: 'unsponsored' }
 
-  before_save :generate_unique_identifier
+  before_save :generate_unique_identifier, if: -> { unique_identifier.blank? }
 
   def generate_unique_identifier
     loop do
