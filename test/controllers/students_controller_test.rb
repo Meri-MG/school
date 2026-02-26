@@ -55,6 +55,15 @@ class StudentsControllerTest < ActionDispatch::IntegrationTest
     assert_match 'Mariam', student.reload.name
   end
 
+  test '#update fails' do
+    student = students(:asmaa)
+
+    put student_path(student), params: { student: { name: '' } }
+
+    assert_response :unprocessable_content
+    assert_match 'Asmaa', student.reload.name
+  end
+
   test '#destroy' do
     student = students(:asmaa)
 
