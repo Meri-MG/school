@@ -18,8 +18,13 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
   end
 
+  def sponsored
+    @students = Student.where(status: 'sponsored').order(created_at: :asc)
+    @pagy, @students = pagy(@students)
+  end
+
   def create
-    @student = Student.create(student_params)
+    @student = Student.new(student_params)
 
     if @student.save
       redirect_to @student, notice: 'Student was successfully created.'

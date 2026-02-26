@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class SponsoredStudentsControllerTest < ActionDispatch::IntegrationTest
+class StudentsControllerSponsoredTest < ActionDispatch::IntegrationTest
   test '#index' do
     get sponsored_students_path
 

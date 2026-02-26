@@ -62,4 +62,9 @@ class StudentsControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :redirect
   end
+
+  test '#sponsor_individual_student' do
+    get sponsor_individual_student_path(students(:asmaa))
+    assert_response :success
+  end
 end
